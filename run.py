@@ -8,8 +8,8 @@ import os
 
 SEED = 42
 RUNS = 5
-ROWS = 100000 #100 * 1000 * 1000
 GRANULE = 8192
+ROWS = GRANULE * 8192
 
 CH_DATABASE = 'test'
 CH_BINARY_PATH = '/home/nikita/ClickHouse/build/programs/clickhouse'
@@ -40,7 +40,7 @@ ch = ClickHouse(CH_BINARY_PATH)
 
 
 def dropPageCache():
-    os.system('echo 1 > /proc/sys/vm/drop_caches')
+    #os.system('echo 1 > /proc/sys/vm/drop_caches')
     return
 
 def getMeta(query, count):
@@ -111,9 +111,9 @@ INSERT INTO {database}.{table} SELECT
     number % ({granule} * 4) AS u4,
     number % ({granule} * 8) AS u8,
     number % ({granule} * 4) AS i4,'''.format(database=CH_DATABASE, table=table, granule=GRANULE) +
-    "format('clickhouse {}', toString(number % (8192 * 8))) AS s8," +
-    "format('clickhouse {}', toString(number % (8192 * 16))) AS s16," +
-    "format('{}', toString(number % (8192 * 64))) AS s64," +
+    "format('clickhouse {}', toString(number % (" + str(GRANULE) + " * 8))) AS s8," +
+    "format('clickhouse {}', toString(number % (" + str(GRANULE) + " * 16))) AS s16," +
+    "format('{}', toString(number % (" + str(GRANULE) + " * 64))) AS s64," +
     "'clickhouseclickhouseclickhouseclickhouseclickhouse' AS heavy" +
 " FROM system.numbers".format(granule=GRANULE) +
 ' LIMIT {rows};'.format(rows=ROWS), answer=False)
@@ -145,13 +145,14 @@ def compareTest():
         "SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u8 vs i4
         "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u1 vs i4
         "SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u8 vs i4
+        "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'", # test equal: u1 vs u8
     ]
     return runQuerySet(q)
 
 def stringTest():
     q = [
         "SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'", # strings basic
-        "SELECT count() FROM {database}.{table} WHERE s8 = 'unknown' AND s16 = 'clickhouse 42' AND heavy == 'heavy'", # strings not found
+        # "SELECT count() FROM {database}.{table} WHERE s8 = 'unknown' AND s16 = 'clickhouse 42' AND heavy == 'heavy'", # strings not found
         "SELECT count() FROM {database}.{table} WHERE u1 = 42 AND s64 = 'clickhouse 42' AND heavy == 'heavy'", # better string
     ]
     return runQuerySet(q)
@@ -167,7 +168,7 @@ def printTable(total):
     for test in TESTS:
         print(test, end='\t')
     print()
-    for token in ['test_compare', 'test_string', 'test_string']:
+    for token in ['test_compare', 'test_string', 'test_granule']:
         print(token, ":")
         for ts in total[token]:
             print(ts['query'], end='\t')
