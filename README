@@ -27,23 +27,23 @@ Queries:
 
 Run every query for: no prewhere, prewhere old algo, prewhere new algo + tdigest, prewhere new algo + tdigest granule
 
-1) u* + heavy
+1) u* + heavy +
 <>
 new <> optimization
 
 different segments
 ...
 
-2) u* + i* + heavy
+2) u* + i* + heavy +
 = 
 u1 vs i1 (better ranks optimization)
 u3 vs i1 (similar optimization)
 
-3) s* + heavy
+3) s* + heavy +
 =
 new string optimization
 
-4) s4 + u1 + heavy
+4) s4 + u1 + heavy  +
 better string selevivity
 
 5) tdigest vs granule tdigest

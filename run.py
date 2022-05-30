@@ -8,7 +8,7 @@ import os
 
 SEED = 42
 RUNS = 5
-ROWS = 100 #100 * 1000 * 1000
+ROWS = 1000 #100 * 1000 * 1000
 GRANULE = 8192
 
 CH_DATABASE = 'test'
@@ -40,7 +40,8 @@ ch = ClickHouse(CH_BINARY_PATH)
 
 
 def dropPageCache():
-    os.system('echo 1 > /proc/sys/vm/drop_caches')
+    #os.system('echo 1 > /proc/sys/vm/drop_caches')
+    return
 
 def getMeta(query, count):
     result = []
@@ -77,9 +78,9 @@ def fillTable(table, stat):
         if stat == 'none':
             return ''
         elif stat == 'tdigest_and_string':
-            return ', STATISTIC num_stat (u1, u2, u3, u4, i1) TYPE tdigest, STATISTIC str_stat (s1, s2, s3) TYPE granule_string_hash'
+            return ', STATISTIC num_stat (u1, u2, u4, u8, i4) TYPE tdigest, STATISTIC str_stat (s8, s16, s64) TYPE granule_string_hash'
         elif stat == 'tdigest_granule_and_string':
-            return ', STATISTIC num_stat (u1, u2, u3, u4, i1) TYPE granule_tdigest, STATISTIC str_stat (s1, s2, s3) TYPE granule_string_hash'
+            return ', STATISTIC num_stat (u1, u2, u4, u8, i4) TYPE granule_tdigest, STATISTIC str_stat (s8, s16, s64) TYPE granule_string_hash'
 
     ch.run('DROP TABLE IF EXISTS {}.{}'.format(CH_DATABASE, table), answer=False)
     ch.run('''
@@ -88,12 +89,12 @@ CREATE TABLE {}.{}
     ind UInt64,
     u1 UInt64 CODEC(NONE),
     u2 UInt64 CODEC(NONE),
-    u3 UInt64 CODEC(NONE),
     u4 UInt64 CODEC(NONE),
-    i1 Int32 CODEC(NONE),
-    s1 String CODEC(NONE),
-    s2 String CODEC(NONE),
-    s3 String CODEC(NONE),
+    u8 UInt64 CODEC(NONE),
+    i4 Int32 CODEC(NONE),
+    s8 String CODEC(NONE),
+    s16 String CODEC(NONE),
+    s64 String CODEC(NONE),
     heavy String CODEC(NONE)
     {}
 )
@@ -121,12 +122,51 @@ INSERT INTO {database}.{table} SELECT
     print(ch.run('SHOW CREATE TABLE {}.{}'.format(CH_DATABASE, table))['data'][0]['statement'])
     print(ch.run('SELECT count() FROM {}.{}'.format(CH_DATABASE, table)))
 
-def runTest(query):
+def runTestOnce(query):
     return getAggregates(query, RUNS)
+
+def runTest(query_template):
+    res = dict()
+    for test in TESTS:
+        res[test] = runTestOnce(query_template.format(database=CH_DATABASE, table=TABLE_BASE+test))
+    return res
+
+def runQuerySet(queries):
+    res = []
+    for query in queries:
+        res.append({'results': runTest(query), 'query': query})
+    return res
+
+def compareTest():
+    q = [
+        "SELECT count() FROM {database}.{table} WHERE 100 < u1 AND u1 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'", # test u1 vs u8
+        "SELECT count() FROM {database}.{table} WHERE 100 < u1 AND u1 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'", # test u1 vs u8
+        "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u1 vs i4
+        "SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u8 vs i4
+        "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u1 vs i4
+        "SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u8 vs i4
+    ]
+    return runQuerySet(q)
+
+def stringTest():
+    q = [
+        "SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'", # strings basic
+        "SELECT count() FROM {database}.{table} WHERE s8 = 'unknown' AND s16 = 'clickhouse 42' AND heavy == 'heavy'", # strings not found
+        "SELECT count() FROM {database}.{table} WHERE u1 = 42 AND s64 = 'clickhouse 42' AND heavy == 'heavy'", # better string
+    ]
+    return runQuerySet(q)
+
+def granuleTest():
+    pass
 
 def main():
     for test in TESTS:
         fillTable(TABLE_BASE + test, test)
-    print(getStatisticsInfo())
+    total = dict()
+    total['test_compare'] = compareTest()
+    total['test_string'] = stringTest()
+    total['stats'] = getStatisticsInfo()
+
+    print(total)
 
 main()
