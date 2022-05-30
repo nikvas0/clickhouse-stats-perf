@@ -53,3 +53,4 @@ on equal
 
 !No compression
 !Drop page cache
+!Release not debug

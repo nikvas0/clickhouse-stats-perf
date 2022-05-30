@@ -8,7 +8,7 @@ import os
 
 SEED = 42
 RUNS = 5
-ROWS = 1000 #100 * 1000 * 1000
+ROWS = 100000 #100 * 1000 * 1000
 GRANULE = 8192
 
 CH_DATABASE = 'test'
@@ -40,7 +40,7 @@ ch = ClickHouse(CH_BINARY_PATH)
 
 
 def dropPageCache():
-    #os.system('echo 1 > /proc/sys/vm/drop_caches')
+    os.system('echo 1 > /proc/sys/vm/drop_caches')
     return
 
 def getMeta(query, count):
@@ -139,9 +139,9 @@ def runQuerySet(queries):
 
 def compareTest():
     q = [
-        "SELECT count() FROM {database}.{table} WHERE 100 < u1 AND u1 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'", # test u1 vs u8
-        "SELECT count() FROM {database}.{table} WHERE 100 < u1 AND u1 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'", # test u1 vs u8
-        "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u1 vs i4
+        "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'", # test u1 vs u8
+        "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'", # test u1 vs u8
+        "SELECT count() FROM {database}.{table} WHERE u2 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u2 vs i4
         "SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u8 vs i4
         "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u1 vs i4
         "SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u8 vs i4
@@ -157,7 +157,23 @@ def stringTest():
     return runQuerySet(q)
 
 def granuleTest():
-    pass
+    q = [
+        "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'", # granule will be better
+    ]
+    return runQuerySet(q)
+
+def printTable(total):
+    print('\t', end='')
+    for test in TESTS:
+        print(test, end='\t')
+    print()
+    for token in ['test_compare', 'test_string', 'test_string']:
+        print(token, ":")
+        for ts in total[token]:
+            print(ts['query'], end='\t')
+            for test in TESTS:
+                print(ts['results'][test]['elapsed'], end='\t')
+            print()
 
 def main():
     for test in TESTS:
@@ -165,7 +181,10 @@ def main():
     total = dict()
     total['test_compare'] = compareTest()
     total['test_string'] = stringTest()
+    total['test_granule'] = granuleTest()
     total['stats'] = getStatisticsInfo()
+
+    printTable(total)
 
     print(total)
 
