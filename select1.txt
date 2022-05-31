@@ -55,7 +55,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.002319386,
+		"elapsed": 0.002894131,
 		"rows_read": 1,
 		"bytes_read": 385
 	}
@@ -99,14 +99,14 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.002441206,
+		"elapsed": 0.002480387,
 		"rows_read": 20,
 		"bytes_read": 4256
 	}
 }
 
 CH: 
-{'meta': [{'name': 'count()', 'type': 'UInt64'}], 'data': [{'count()': '67108864'}], 'rows': 1, 'statistics': {'elapsed': 0.002441206, 'rows_read': 20, 'bytes_read': 4256}}
+{'meta': [{'name': 'count()', 'type': 'UInt64'}], 'data': [{'count()': '67108864'}], 'rows': 1, 'statistics': {'elapsed': 0.002480387, 'rows_read': 20, 'bytes_read': 4256}}
 Q: DROP TABLE IF EXISTS test.t_tdigest_and_string
 CH: 
 CH: 
@@ -164,7 +164,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.003255285,
+		"elapsed": 0.002770069,
 		"rows_read": 1,
 		"bytes_read": 521
 	}
@@ -210,14 +210,14 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.002604467,
+		"elapsed": 0.002384534,
 		"rows_read": 20,
 		"bytes_read": 4256
 	}
 }
 
 CH: 
-{'meta': [{'name': 'count()', 'type': 'UInt64'}], 'data': [{'count()': '67108864'}], 'rows': 1, 'statistics': {'elapsed': 0.002604467, 'rows_read': 20, 'bytes_read': 4256}}
+{'meta': [{'name': 'count()', 'type': 'UInt64'}], 'data': [{'count()': '67108864'}], 'rows': 1, 'statistics': {'elapsed': 0.002384534, 'rows_read': 20, 'bytes_read': 4256}}
 Q: DROP TABLE IF EXISTS test.t_tdigest_granule_and_string
 CH: 
 CH: 
@@ -275,7 +275,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.002352104,
+		"elapsed": 0.0021363,
 		"rows_read": 1,
 		"bytes_read": 537
 	}
@@ -321,14 +321,14 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.002504423,
+		"elapsed": 0.002153754,
 		"rows_read": 20,
 		"bytes_read": 4256
 	}
 }
 
 CH: 
-{'meta': [{'name': 'count()', 'type': 'UInt64'}], 'data': [{'count()': '67108864'}], 'rows': 1, 'statistics': {'elapsed': 0.002504423, 'rows_read': 20, 'bytes_read': 4256}}
+{'meta': [{'name': 'count()', 'type': 'UInt64'}], 'data': [{'count()': '67108864'}], 'rows': 1, 'statistics': {'elapsed': 0.002153754, 'rows_read': 20, 'bytes_read': 4256}}
 Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
 CH: {
 	"meta":
@@ -350,35 +350,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.14527338,
-		"rows_read": 67108864,
-		"bytes_read": 768019840
-	}
-}
-
-CH: 
-Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
-CH: {
-	"meta":
-	[
-		{
-			"name": "count()",
-			"type": "UInt64"
-		}
-	],
-
-	"data":
-	[
-		{
-			"count()": "0"
-		}
-	],
-
-	"rows": 1,
-
-	"statistics":
-	{
-		"elapsed": 0.177567648,
+		"elapsed": 0.159470482,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -406,7 +378,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.144707046,
+		"elapsed": 0.167936629,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -434,7 +406,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.139753314,
+		"elapsed": 0.139345854,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -462,7 +434,35 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.14687355,
+		"elapsed": 0.147026497,
+		"rows_read": 67108864,
+		"bytes_read": 768019840
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.133462246,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -490,7 +490,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.087465949,
+		"elapsed": 0.077574612,
 		"rows_read": 67108864,
 		"bytes_read": 584489152
 	}
@@ -518,7 +518,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.10082282,
+		"elapsed": 0.095979452,
 		"rows_read": 67108864,
 		"bytes_read": 584489152
 	}
@@ -546,7 +546,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.081738818,
+		"elapsed": 0.076900451,
 		"rows_read": 67108864,
 		"bytes_read": 584489152
 	}
@@ -574,7 +574,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.081280022,
+		"elapsed": 0.08733959,
 		"rows_read": 67108864,
 		"bytes_read": 584489152
 	}
@@ -602,7 +602,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.081498961,
+		"elapsed": 0.077772493,
 		"rows_read": 67108864,
 		"bytes_read": 584489152
 	}
@@ -630,9 +630,9 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.08309397,
+		"elapsed": 0.098890893,
 		"rows_read": 67108864,
-		"bytes_read": 612603424
+		"bytes_read": 613101904
 	}
 }
 
@@ -658,9 +658,9 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.091851036,
+		"elapsed": 0.092074499,
 		"rows_read": 67108864,
-		"bytes_read": 612603424
+		"bytes_read": 613101904
 	}
 }
 
@@ -686,9 +686,9 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.08428455,
+		"elapsed": 0.088402032,
 		"rows_read": 67108864,
-		"bytes_read": 612603424
+		"bytes_read": 613101904
 	}
 }
 
@@ -714,9 +714,9 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.087719926,
+		"elapsed": 0.077280248,
 		"rows_read": 67108864,
-		"bytes_read": 612603424
+		"bytes_read": 613101904
 	}
 }
 
@@ -742,13 +742,14 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.08856863,
+		"elapsed": 0.074983238,
 		"rows_read": 67108864,
 		"bytes_read": 612603424
 	}
 }
 
 CH: 
+ERROR bytes: 613101904!=612603424
 Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
 CH: {
 	"meta":
@@ -770,7 +771,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.138955936,
+		"elapsed": 0.137082004,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -798,7 +799,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.141707,
+		"elapsed": 0.140231301,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -826,7 +827,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.147123996,
+		"elapsed": 0.143211041,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -854,7 +855,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.143536772,
+		"elapsed": 0.133090626,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -882,7 +883,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.139751922,
+		"elapsed": 0.139604952,
 		"rows_read": 67108864,
 		"bytes_read": 768019840
 	}
@@ -910,7 +911,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.145522358,
+		"elapsed": 0.141700396,
 		"rows_read": 67108864,
 		"bytes_read": 727343872
 	}
@@ -938,7 +939,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.155528106,
+		"elapsed": 0.142454331,
 		"rows_read": 67108864,
 		"bytes_read": 727343872
 	}
@@ -966,7 +967,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.141749045,
+		"elapsed": 0.136012008,
 		"rows_read": 67108864,
 		"bytes_read": 727343872
 	}
@@ -994,7 +995,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.144898194,
+		"elapsed": 0.151881993,
 		"rows_read": 67108864,
 		"bytes_read": 727343872
 	}
@@ -1022,7 +1023,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.138591983,
+		"elapsed": 0.135140686,
 		"rows_read": 67108864,
 		"bytes_read": 727343872
 	}
@@ -1050,7 +1051,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082641658,
+		"elapsed": 0.082092999,
 		"rows_read": 67108864,
 		"bytes_read": 667489824
 	}
@@ -1078,7 +1079,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.078444865,
+		"elapsed": 0.082478408,
 		"rows_read": 67108864,
 		"bytes_read": 667489824
 	}
@@ -1106,7 +1107,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.087078908,
+		"elapsed": 0.077667332,
 		"rows_read": 67108864,
 		"bytes_read": 667489824
 	}
@@ -1134,7 +1135,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.079822547,
+		"elapsed": 0.087087381,
 		"rows_read": 67108864,
 		"bytes_read": 667489824
 	}
@@ -1162,7 +1163,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.097452478,
+		"elapsed": 0.079487275,
 		"rows_read": 67108864,
 		"bytes_read": 667489824
 	}
@@ -1190,7 +1191,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.084709768,
+		"elapsed": 0.076787949,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1218,7 +1219,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.081570988,
+		"elapsed": 0.079787484,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1246,7 +1247,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.08080975,
+		"elapsed": 0.081430394,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1274,7 +1275,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082653847,
+		"elapsed": 0.207183118,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1302,7 +1303,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.076461382,
+		"elapsed": 0.080702321,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1330,7 +1331,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.083132777,
+		"elapsed": 0.081097671,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1358,7 +1359,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.346070058,
+		"elapsed": 0.082611596,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1386,7 +1387,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.086250184,
+		"elapsed": 0.076089957,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1414,7 +1415,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.080915003,
+		"elapsed": 0.08909972,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1442,7 +1443,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.089465111,
+		"elapsed": 0.08052967,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1470,7 +1471,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082168636,
+		"elapsed": 0.080470823,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -1498,7 +1499,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.094380357,
+		"elapsed": 0.104081415,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -1526,7 +1527,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.086215628,
+		"elapsed": 0.079637588,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -1554,7 +1555,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082256429,
+		"elapsed": 0.08091733,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -1582,7 +1583,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.088864506,
+		"elapsed": 0.077994764,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -1610,7 +1611,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.084632315,
+		"elapsed": 0.080302419,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1638,7 +1639,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.07695521,
+		"elapsed": 0.084945631,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1666,7 +1667,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.076521108,
+		"elapsed": 0.081949367,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1694,7 +1695,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082240123,
+		"elapsed": 0.077278918,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1722,7 +1723,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.08244093,
+		"elapsed": 0.083705644,
 		"rows_read": 67108864,
 		"bytes_read": 370288320
 	}
@@ -1750,7 +1751,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.085037054,
+		"elapsed": 0.082395219,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1778,7 +1779,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.08545565,
+		"elapsed": 0.077343023,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1806,7 +1807,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.084435448,
+		"elapsed": 0.078309397,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1834,7 +1835,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.078758348,
+		"elapsed": 0.074413375,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1862,7 +1863,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.088980984,
+		"elapsed": 0.075864157,
 		"rows_read": 67108864,
 		"bytes_read": 349950336
 	}
@@ -1890,7 +1891,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.080898343,
+		"elapsed": 0.076363695,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -1918,7 +1919,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.085917585,
+		"elapsed": 0.079814909,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -1946,7 +1947,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082638448,
+		"elapsed": 0.08030978,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -1974,7 +1975,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.087729241,
+		"elapsed": 0.079503488,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -2002,7 +2003,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.090053791,
+		"elapsed": 0.078585376,
 		"rows_read": 67108864,
 		"bytes_read": 382251840
 	}
@@ -2030,7 +2031,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.080833389,
+		"elapsed": 0.080396724,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2058,7 +2059,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.080121707,
+		"elapsed": 0.086945918,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2086,7 +2087,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.084349321,
+		"elapsed": 0.079657787,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2114,7 +2115,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082326834,
+		"elapsed": 0.074666488,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2142,7 +2143,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.080358532,
+		"elapsed": 0.081528235,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2170,7 +2171,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082959727,
+		"elapsed": 0.081182737,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2198,7 +2199,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.086177157,
+		"elapsed": 0.078880286,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2226,7 +2227,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082920683,
+		"elapsed": 0.077621687,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2254,7 +2255,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.080375905,
+		"elapsed": 0.076110071,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2282,7 +2283,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.573886732,
+		"elapsed": 0.081207727,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2310,7 +2311,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.084151497,
+		"elapsed": 0.087819608,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2338,7 +2339,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.088332482,
+		"elapsed": 0.081537369,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2366,7 +2367,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.083963565,
+		"elapsed": 0.081211643,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2394,7 +2395,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082367114,
+		"elapsed": 0.083368003,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2422,7 +2423,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.0895978,
+		"elapsed": 0.084727124,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2450,7 +2451,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.077216575,
+		"elapsed": 0.079195021,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2478,7 +2479,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.080240846,
+		"elapsed": 0.075702143,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2506,7 +2507,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.086569598,
+		"elapsed": 0.07682627,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2534,7 +2535,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082002111,
+		"elapsed": 0.142463896,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2562,7 +2563,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.085678057,
+		"elapsed": 0.085168392,
 		"rows_read": 67108864,
 		"bytes_read": 370425536
 	}
@@ -2590,7 +2591,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.087033841,
+		"elapsed": 0.077956003,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2618,7 +2619,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.081949716,
+		"elapsed": 0.079101787,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2646,7 +2647,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.083650668,
+		"elapsed": 0.083739287,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2674,7 +2675,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082577604,
+		"elapsed": 0.078068201,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2702,7 +2703,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.082896063,
+		"elapsed": 0.077679675,
 		"rows_read": 67108864,
 		"bytes_read": 350087552
 	}
@@ -2730,7 +2731,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.085613733,
+		"elapsed": 0.082230799,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2758,7 +2759,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.083230047,
+		"elapsed": 0.086261231,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2786,7 +2787,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.087187043,
+		"elapsed": 0.086435162,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2814,7 +2815,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.084730889,
+		"elapsed": 0.085520049,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2842,7 +2843,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.084302145,
+		"elapsed": 0.077302255,
 		"rows_read": 67108864,
 		"bytes_read": 382389056
 	}
@@ -2870,7 +2871,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.170413694,
+		"elapsed": 0.165142291,
 		"rows_read": 67108864,
 		"bytes_read": 944831232
 	}
@@ -2898,7 +2899,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.171057444,
+		"elapsed": 0.159262869,
 		"rows_read": 67108864,
 		"bytes_read": 944831232
 	}
@@ -2926,7 +2927,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.164506512,
+		"elapsed": 0.160704396,
 		"rows_read": 67108864,
 		"bytes_read": 944831232
 	}
@@ -2954,7 +2955,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.181138239,
+		"elapsed": 0.161491607,
 		"rows_read": 67108864,
 		"bytes_read": 944831232
 	}
@@ -2982,7 +2983,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.170971251,
+		"elapsed": 0.154765953,
 		"rows_read": 67108864,
 		"bytes_read": 944831232
 	}
@@ -3010,7 +3011,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.071113723,
+		"elapsed": 0.069434317,
 		"rows_read": 67108864,
 		"bytes_read": 577696960
 	}
@@ -3038,7 +3039,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.079667058,
+		"elapsed": 0.072214473,
 		"rows_read": 67108864,
 		"bytes_read": 577696960
 	}
@@ -3066,7 +3067,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.080609401,
+		"elapsed": 0.069585164,
 		"rows_read": 67108864,
 		"bytes_read": 577696960
 	}
@@ -3094,7 +3095,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.07533752,
+		"elapsed": 0.075579437,
 		"rows_read": 67108864,
 		"bytes_read": 577696960
 	}
@@ -3122,7 +3123,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.072506477,
+		"elapsed": 0.075176587,
 		"rows_read": 67108864,
 		"bytes_read": 577696960
 	}
@@ -3150,7 +3151,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.0760243,
+		"elapsed": 0.071585079,
 		"rows_read": 67108864,
 		"bytes_read": 593847712
 	}
@@ -3178,7 +3179,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.079412584,
+		"elapsed": 0.071182603,
 		"rows_read": 67108864,
 		"bytes_read": 593847712
 	}
@@ -3206,7 +3207,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.079563782,
+		"elapsed": 0.07873524,
 		"rows_read": 67108864,
 		"bytes_read": 593847712
 	}
@@ -3234,7 +3235,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.078210549,
+		"elapsed": 0.075823389,
 		"rows_read": 67108864,
 		"bytes_read": 593847712
 	}
@@ -3262,7 +3263,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.606867469,
+		"elapsed": 0.078035699,
 		"rows_read": 67108864,
 		"bytes_read": 593847712
 	}
@@ -3290,7 +3291,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.13671465,
+		"elapsed": 0.141393313,
 		"rows_read": 67108864,
 		"bytes_read": 1725547792
 	}
@@ -3318,7 +3319,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.146725881,
+		"elapsed": 0.135537904,
 		"rows_read": 67108864,
 		"bytes_read": 1725547792
 	}
@@ -3346,7 +3347,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.146519444,
+		"elapsed": 0.138159402,
 		"rows_read": 67108864,
 		"bytes_read": 1725547792
 	}
@@ -3374,7 +3375,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.139398596,
+		"elapsed": 0.14134091,
 		"rows_read": 67108864,
 		"bytes_read": 1725547792
 	}
@@ -3402,7 +3403,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.134605265,
+		"elapsed": 0.143644016,
 		"rows_read": 67108864,
 		"bytes_read": 1725547792
 	}
@@ -3430,7 +3431,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.241920818,
+		"elapsed": 0.236454554,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3458,7 +3459,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.244528963,
+		"elapsed": 0.246362055,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3486,7 +3487,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.232307019,
+		"elapsed": 0.242424952,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3514,7 +3515,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.23715237,
+		"elapsed": 0.232489735,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3542,7 +3543,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.231839308,
+		"elapsed": 0.225216853,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3570,7 +3571,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.237421981,
+		"elapsed": 0.228126586,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3598,7 +3599,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.251472219,
+		"elapsed": 0.233917359,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3626,7 +3627,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.229624433,
+		"elapsed": 0.226111786,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3654,7 +3655,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.235410468,
+		"elapsed": 0.246627075,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3682,7 +3683,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.23755311,
+		"elapsed": 0.218526132,
 		"rows_read": 67108864,
 		"bytes_read": 5625767936
 	}
@@ -3710,7 +3711,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.160003799,
+		"elapsed": 0.45406229,
 		"rows_read": 67108864,
 		"bytes_read": 951130284
 	}
@@ -3738,7 +3739,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.167531037,
+		"elapsed": 0.159261548,
 		"rows_read": 67108864,
 		"bytes_read": 951130284
 	}
@@ -3766,7 +3767,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.170147744,
+		"elapsed": 0.15795475,
 		"rows_read": 67108864,
 		"bytes_read": 951130284
 	}
@@ -3794,7 +3795,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.36612314,
+		"elapsed": 0.161341599,
 		"rows_read": 67108864,
 		"bytes_read": 951130284
 	}
@@ -3822,7 +3823,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.158757128,
+		"elapsed": 0.158841733,
 		"rows_read": 67108864,
 		"bytes_read": 951130284
 	}
@@ -3850,7 +3851,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.163632146,
+		"elapsed": 0.151067391,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -3878,7 +3879,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.154573433,
+		"elapsed": 0.150472801,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -3906,7 +3907,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.165427493,
+		"elapsed": 0.151864941,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -3934,7 +3935,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.16612975,
+		"elapsed": 0.159455626,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -3962,7 +3963,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.156800718,
+		"elapsed": 0.153657615,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -3990,7 +3991,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.160741195,
+		"elapsed": 0.153017907,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -4018,7 +4019,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.163473977,
+		"elapsed": 0.161284483,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -4046,7 +4047,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.163739281,
+		"elapsed": 0.152615263,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -4074,7 +4075,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.165328386,
+		"elapsed": 0.156393891,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -4102,7 +4103,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.165766064,
+		"elapsed": 0.146675148,
 		"rows_read": 67108864,
 		"bytes_read": 861525528
 	}
@@ -4130,7 +4131,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.170480619,
+		"elapsed": 0.15797109,
 		"rows_read": 67108864,
 		"bytes_read": 944282368
 	}
@@ -4158,7 +4159,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.162847763,
+		"elapsed": 0.158599481,
 		"rows_read": 67108864,
 		"bytes_read": 944282368
 	}
@@ -4186,7 +4187,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.164565796,
+		"elapsed": 0.158473873,
 		"rows_read": 67108864,
 		"bytes_read": 944282368
 	}
@@ -4214,7 +4215,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.161848719,
+		"elapsed": 0.155582318,
 		"rows_read": 67108864,
 		"bytes_read": 944282368
 	}
@@ -4242,7 +4243,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.162364483,
+		"elapsed": 0.169762609,
 		"rows_read": 67108864,
 		"bytes_read": 944282368
 	}
@@ -4270,7 +4271,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.176371828,
+		"elapsed": 0.164448014,
 		"rows_read": 67108864,
 		"bytes_read": 862930432
 	}
@@ -4298,7 +4299,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.163419081,
+		"elapsed": 0.157925251,
 		"rows_read": 67108864,
 		"bytes_read": 862930432
 	}
@@ -4326,7 +4327,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.160884609,
+		"elapsed": 0.161135494,
 		"rows_read": 67108864,
 		"bytes_read": 862930432
 	}
@@ -4354,7 +4355,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.17369575,
+		"elapsed": 0.157234184,
 		"rows_read": 67108864,
 		"bytes_read": 862930432
 	}
@@ -4382,7 +4383,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.171201483,
+		"elapsed": 0.16657582,
 		"rows_read": 67108864,
 		"bytes_read": 862930432
 	}
@@ -4410,7 +4411,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.137851236,
+		"elapsed": 0.138889116,
 		"rows_read": 67108864,
 		"bytes_read": 946889472
 	}
@@ -4438,7 +4439,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.145294016,
+		"elapsed": 0.133378816,
 		"rows_read": 67108864,
 		"bytes_read": 946889472
 	}
@@ -4466,7 +4467,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.143155663,
+		"elapsed": 0.136693776,
 		"rows_read": 67108864,
 		"bytes_read": 946889472
 	}
@@ -4494,7 +4495,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.136971356,
+		"elapsed": 0.130282174,
 		"rows_read": 67108864,
 		"bytes_read": 946889472
 	}
@@ -4522,7 +4523,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.139382356,
+		"elapsed": 0.134038424,
 		"rows_read": 67108864,
 		"bytes_read": 946889472
 	}
@@ -4585,7 +4586,7 @@ CH: {
 			"name": "str_stat",
 			"columns": ["s8","s16","s64"],
 			"type": "granule_string_hash",
-			"data_in_ram_bytes": "0",
+			"data_in_ram_bytes": "12648",
 			"data_compressed_bytes": "37473",
 			"data_uncompressed_bytes": "0"
 		},
@@ -4605,7 +4606,7 @@ CH: {
 			"name": "str_stat",
 			"columns": ["s8","s16","s64"],
 			"type": "granule_string_hash",
-			"data_in_ram_bytes": "0",
+			"data_in_ram_bytes": "12648",
 			"data_compressed_bytes": "37473",
 			"data_uncompressed_bytes": "0"
 		}
@@ -4615,7 +4616,7 @@ CH: {
 
 	"statistics":
 	{
-		"elapsed": 0.004072553,
+		"elapsed": 0.003716949,
 		"rows_read": 4,
 		"bytes_read": 656
 	}
@@ -4624,16 +4625,16 @@ CH: {
 CH: 
 	none	tdigest_and_string	tdigest_granule_and_string	
 test_compare :
-SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'	0.139753314	0.081280022	0.08309397	
-SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'	0.138955936	0.138591983	0.078444865	
-SELECT count() FROM {database}.{table} WHERE u2 < 100 AND i4 < 100 AND heavy == 'heavy'	0.076461382	0.080915003	0.082168636	
-SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'	0.076521108	0.078758348	0.080898343	
-SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'	0.080121707	0.080375905	0.082367114	
-SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'	0.077216575	0.081949716	0.083230047	
-SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'	0.164506512	0.071113723	0.0760243	
+SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'	0.133462246	0.076900451	0.074983238	
+SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'	0.133090626	0.135140686	0.077667332	
+SELECT count() FROM {database}.{table} WHERE u2 < 100 AND i4 < 100 AND heavy == 'heavy'	0.076787949	0.076089957	0.077994764	
+SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'	0.077278918	0.074413375	0.076363695	
+SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'	0.074666488	0.076110071	0.081211643	
+SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'	0.075702143	0.077679675	0.077302255	
+SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'	0.154765953	0.069434317	0.071182603	
 test_string :
-SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'	0.134605265	0.231839308	0.229624433	
-SELECT count() FROM {database}.{table} WHERE u1 = 42 AND s64 = 'clickhouse 42' AND heavy == 'heavy'	0.158757128	0.154573433	0.160741195	
+SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'	0.135537904	0.225216853	0.218526132	
+SELECT count() FROM {database}.{table} WHERE u1 = 42 AND s64 = 'clickhouse 42' AND heavy == 'heavy'	0.15795475	0.150472801	0.146675148	
 test_granule :
-SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'	0.161848719	0.160884609	0.136971356	
-{'test_compare': [{'results': {'none': {'elapsed': 0.139753314, 'rows': 67108864, 'bytes': 768019840}, 'tdigest_and_string': {'elapsed': 0.081280022, 'rows': 67108864, 'bytes': 584489152}, 'tdigest_granule_and_string': {'elapsed': 0.08309397, 'rows': 67108864, 'bytes': 612603424}}, 'query': "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.138955936, 'rows': 67108864, 'bytes': 768019840}, 'tdigest_and_string': {'elapsed': 0.138591983, 'rows': 67108864, 'bytes': 727343872}, 'tdigest_granule_and_string': {'elapsed': 0.078444865, 'rows': 67108864, 'bytes': 667489824}}, 'query': "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.076461382, 'rows': 67108864, 'bytes': 370288320}, 'tdigest_and_string': {'elapsed': 0.080915003, 'rows': 67108864, 'bytes': 349950336}, 'tdigest_granule_and_string': {'elapsed': 0.082168636, 'rows': 67108864, 'bytes': 382251840}}, 'query': "SELECT count() FROM {database}.{table} WHERE u2 < 100 AND i4 < 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.076521108, 'rows': 67108864, 'bytes': 370288320}, 'tdigest_and_string': {'elapsed': 0.078758348, 'rows': 67108864, 'bytes': 349950336}, 'tdigest_granule_and_string': {'elapsed': 0.080898343, 'rows': 67108864, 'bytes': 382251840}}, 'query': "SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.080121707, 'rows': 67108864, 'bytes': 370425536}, 'tdigest_and_string': {'elapsed': 0.080375905, 'rows': 67108864, 'bytes': 350087552}, 'tdigest_granule_and_string': {'elapsed': 0.082367114, 'rows': 67108864, 'bytes': 382389056}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.077216575, 'rows': 67108864, 'bytes': 370425536}, 'tdigest_and_string': {'elapsed': 0.081949716, 'rows': 67108864, 'bytes': 350087552}, 'tdigest_granule_and_string': {'elapsed': 0.083230047, 'rows': 67108864, 'bytes': 382389056}}, 'query': "SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.164506512, 'rows': 67108864, 'bytes': 944831232}, 'tdigest_and_string': {'elapsed': 0.071113723, 'rows': 67108864, 'bytes': 577696960}, 'tdigest_granule_and_string': {'elapsed': 0.0760243, 'rows': 67108864, 'bytes': 593847712}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'"}], 'test_string': [{'results': {'none': {'elapsed': 0.134605265, 'rows': 67108864, 'bytes': 1725547792}, 'tdigest_and_string': {'elapsed': 0.231839308, 'rows': 67108864, 'bytes': 5625767936}, 'tdigest_granule_and_string': {'elapsed': 0.229624433, 'rows': 67108864, 'bytes': 5625767936}}, 'query': "SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.158757128, 'rows': 67108864, 'bytes': 951130284}, 'tdigest_and_string': {'elapsed': 0.154573433, 'rows': 67108864, 'bytes': 861525528}, 'tdigest_granule_and_string': {'elapsed': 0.160741195, 'rows': 67108864, 'bytes': 861525528}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 = 42 AND s64 = 'clickhouse 42' AND heavy == 'heavy'"}], 'test_granule': [{'results': {'none': {'elapsed': 0.161848719, 'rows': 67108864, 'bytes': 944282368}, 'tdigest_and_string': {'elapsed': 0.160884609, 'rows': 67108864, 'bytes': 862930432}, 'tdigest_granule_and_string': {'elapsed': 0.136971356, 'rows': 67108864, 'bytes': 946889472}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'"}], 'stats': [{'database': 'test', 'table': 't_tdigest_and_string', 'name': 'num_stat', 'columns': ['u1', 'u2', 'u4', 'u8', 'i4'], 'type': 'tdigest', 'data_in_ram_bytes': '225920', 'data_compressed_bytes': '88971', 'data_uncompressed_bytes': '0'}, {'database': 'test', 'table': 't_tdigest_and_string', 'name': 'str_stat', 'columns': ['s8', 's16', 's64'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '0', 'data_compressed_bytes': '37473', 'data_uncompressed_bytes': '0'}, {'database': 'test', 'table': 't_tdigest_granule_and_string', 'name': 'num_stat', 'columns': ['u1', 'u2', 'u4', 'u8', 'i4'], 'type': 'granule_tdigest', 'data_in_ram_bytes': '226560', 'data_compressed_bytes': '67887', 'data_uncompressed_bytes': '0'}, {'database': 'test', 'table': 't_tdigest_granule_and_string', 'name': 'str_stat', 'columns': ['s8', 's16', 's64'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '0', 'data_compressed_bytes': '37473', 'data_uncompressed_bytes': '0'}]}
+SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'	0.155582318	0.157234184	0.130282174	
+{'test_compare': [{'results': {'none': {'elapsed': 0.133462246, 'rows': 67108864, 'bytes': 768019840}, 'tdigest_and_string': {'elapsed': 0.076900451, 'rows': 67108864, 'bytes': 584489152}, 'tdigest_granule_and_string': {'elapsed': 0.074983238, 'rows': 67108864, 'bytes': 613101904}}, 'query': "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.133090626, 'rows': 67108864, 'bytes': 768019840}, 'tdigest_and_string': {'elapsed': 0.135140686, 'rows': 67108864, 'bytes': 727343872}, 'tdigest_granule_and_string': {'elapsed': 0.077667332, 'rows': 67108864, 'bytes': 667489824}}, 'query': "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.076787949, 'rows': 67108864, 'bytes': 370288320}, 'tdigest_and_string': {'elapsed': 0.076089957, 'rows': 67108864, 'bytes': 349950336}, 'tdigest_granule_and_string': {'elapsed': 0.077994764, 'rows': 67108864, 'bytes': 382251840}}, 'query': "SELECT count() FROM {database}.{table} WHERE u2 < 100 AND i4 < 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.077278918, 'rows': 67108864, 'bytes': 370288320}, 'tdigest_and_string': {'elapsed': 0.074413375, 'rows': 67108864, 'bytes': 349950336}, 'tdigest_granule_and_string': {'elapsed': 0.076363695, 'rows': 67108864, 'bytes': 382251840}}, 'query': "SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.074666488, 'rows': 67108864, 'bytes': 370425536}, 'tdigest_and_string': {'elapsed': 0.076110071, 'rows': 67108864, 'bytes': 350087552}, 'tdigest_granule_and_string': {'elapsed': 0.081211643, 'rows': 67108864, 'bytes': 382389056}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.075702143, 'rows': 67108864, 'bytes': 370425536}, 'tdigest_and_string': {'elapsed': 0.077679675, 'rows': 67108864, 'bytes': 350087552}, 'tdigest_granule_and_string': {'elapsed': 0.077302255, 'rows': 67108864, 'bytes': 382389056}}, 'query': "SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.154765953, 'rows': 67108864, 'bytes': 944831232}, 'tdigest_and_string': {'elapsed': 0.069434317, 'rows': 67108864, 'bytes': 577696960}, 'tdigest_granule_and_string': {'elapsed': 0.071182603, 'rows': 67108864, 'bytes': 593847712}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'"}], 'test_string': [{'results': {'none': {'elapsed': 0.135537904, 'rows': 67108864, 'bytes': 1725547792}, 'tdigest_and_string': {'elapsed': 0.225216853, 'rows': 67108864, 'bytes': 5625767936}, 'tdigest_granule_and_string': {'elapsed': 0.218526132, 'rows': 67108864, 'bytes': 5625767936}}, 'query': "SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 0.15795475, 'rows': 67108864, 'bytes': 951130284}, 'tdigest_and_string': {'elapsed': 0.150472801, 'rows': 67108864, 'bytes': 861525528}, 'tdigest_granule_and_string': {'elapsed': 0.146675148, 'rows': 67108864, 'bytes': 861525528}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 = 42 AND s64 = 'clickhouse 42' AND heavy == 'heavy'"}], 'test_granule': [{'results': {'none': {'elapsed': 0.155582318, 'rows': 67108864, 'bytes': 944282368}, 'tdigest_and_string': {'elapsed': 0.157234184, 'rows': 67108864, 'bytes': 862930432}, 'tdigest_granule_and_string': {'elapsed': 0.130282174, 'rows': 67108864, 'bytes': 946889472}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'"}], 'stats': [{'database': 'test', 'table': 't_tdigest_and_string', 'name': 'num_stat', 'columns': ['u1', 'u2', 'u4', 'u8', 'i4'], 'type': 'tdigest', 'data_in_ram_bytes': '225920', 'data_compressed_bytes': '88971', 'data_uncompressed_bytes': '0'}, {'database': 'test', 'table': 't_tdigest_and_string', 'name': 'str_stat', 'columns': ['s8', 's16', 's64'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '12648', 'data_compressed_bytes': '37473', 'data_uncompressed_bytes': '0'}, {'database': 'test', 'table': 't_tdigest_granule_and_string', 'name': 'num_stat', 'columns': ['u1', 'u2', 'u4', 'u8', 'i4'], 'type': 'granule_tdigest', 'data_in_ram_bytes': '226560', 'data_compressed_bytes': '67887', 'data_uncompressed_bytes': '0'}, {'database': 'test', 'table': 't_tdigest_granule_and_string', 'name': 'str_stat', 'columns': ['s8', 's16', 's64'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '12648', 'data_compressed_bytes': '37473', 'data_uncompressed_bytes': '0'}]}
