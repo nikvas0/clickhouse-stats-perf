@@ -12,7 +12,7 @@ GRANULE = 8192
 ROWS = GRANULE * 8192
 
 CH_DATABASE = 'test'
-CH_BINARY_PATH = '/home/nikita/ClickHouse/build/programs/clickhouse'
+CH_BINARY_PATH = '/home/nikita/ClickHouse/build_release/programs/clickhouse'
 
 TABLE_BASE = 't_'
 TESTS = ['none', 'tdigest_and_string', 'tdigest_granule_and_string']
@@ -39,14 +39,9 @@ class ClickHouse:
 ch = ClickHouse(CH_BINARY_PATH)
 
 
-def dropPageCache():
-    #os.system('echo 1 > /proc/sys/vm/drop_caches')
-    return
-
 def getMeta(query, count):
     result = []
     for _ in range(count):
-        dropPageCache()
         cur = ch.run(query)
         result.append(cur['statistics'])
     return result
@@ -118,9 +113,13 @@ INSERT INTO {database}.{table} SELECT
 " FROM system.numbers".format(granule=GRANULE) +
 ' LIMIT {rows};'.format(rows=ROWS), answer=False)
 
+    ch.run('OPTIMIZE TABLE {}.{} FINAL'.format(CH_DATABASE, table), answer=False)
     ch.run('SYSTEM RELOAD STATISTICS {}.{}'.format(CH_DATABASE, table), answer=False)
     print(ch.run('SHOW CREATE TABLE {}.{}'.format(CH_DATABASE, table))['data'][0]['statement'])
     print(ch.run('SELECT count() FROM {}.{}'.format(CH_DATABASE, table)))
+
+def dropTable(table):
+    ch.run('DROP TABLE IF EXISTS {}.{}'.format(CH_DATABASE, table), answer=False)
 
 def runTestOnce(query):
     return getAggregates(query, RUNS)
@@ -188,5 +187,8 @@ def main():
     printTable(total)
 
     print(total)
+
+    for test in TESTS:
+        dropTable(TABLE_BASE + test)
 
 main()

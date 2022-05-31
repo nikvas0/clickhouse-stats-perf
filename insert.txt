@@ -1,0 +1,101 @@
+Q: DROP TABLE IF EXISTS test.t_none
+CH: 
+CH: 
+Q: 
+CREATE TABLE test.t_none
+(
+    ind UInt64,
+    u1 UInt64,
+    u2 UInt64,
+    u3 UInt64,
+    u4 UInt64,
+    s1 String,
+    s2 String,
+    s3 String,
+    s4 String
+    
+)
+ENGINE=MergeTree() ORDER BY ind
+
+CH: 
+CH: 
+Q: DROP TABLE IF EXISTS test.t_none
+CH: 
+CH: 
+Q: DROP TABLE IF EXISTS test.t_tdigest
+CH: 
+CH: 
+Q: 
+CREATE TABLE test.t_tdigest
+(
+    ind UInt64,
+    u1 UInt64,
+    u2 UInt64,
+    u3 UInt64,
+    u4 UInt64,
+    s1 String,
+    s2 String,
+    s3 String,
+    s4 String
+    ,STATISTIC num_stat (u1, u2, u3, u4) TYPE tdigest 
+)
+ENGINE=MergeTree() ORDER BY ind
+
+CH: 
+CH: 
+Q: DROP TABLE IF EXISTS test.t_tdigest
+CH: 
+CH: 
+Q: DROP TABLE IF EXISTS test.t_tdigest_granule
+CH: 
+CH: 
+Q: 
+CREATE TABLE test.t_tdigest_granule
+(
+    ind UInt64,
+    u1 UInt64,
+    u2 UInt64,
+    u3 UInt64,
+    u4 UInt64,
+    s1 String,
+    s2 String,
+    s3 String,
+    s4 String
+    ,STATISTIC num_stat (u1, u2, u3, u4) TYPE granule_tdigest 
+)
+ENGINE=MergeTree() ORDER BY ind
+
+CH: 
+CH: 
+Q: DROP TABLE IF EXISTS test.t_tdigest_granule
+CH: 
+CH: 
+Q: DROP TABLE IF EXISTS test.t_string
+CH: 
+CH: 
+Q: 
+CREATE TABLE test.t_string
+(
+    ind UInt64,
+    u1 UInt64,
+    u2 UInt64,
+    u3 UInt64,
+    u4 UInt64,
+    s1 String,
+    s2 String,
+    s3 String,
+    s4 String
+    ,STATISTIC str_stat (s1, s2, s3, s4) TYPE granule_string_hash 
+)
+ENGINE=MergeTree() ORDER BY ind
+
+CH: 
+CH: 
+Q: DROP TABLE IF EXISTS test.t_string
+CH: 
+CH: 
+	none	tdigest	tdigest_granule	string	
+test_insert :
+	26.633466005325317	68.90089917182922	70.9543309211731	82.48186373710632	
+
+{'test_insert': {'none': {'elapsed': 26.633466005325317}, 'tdigest': {'elapsed': 68.90089917182922}, 'tdigest_granule': {'elapsed': 70.9543309211731}, 'string': {'elapsed': 82.48186373710632}}}
