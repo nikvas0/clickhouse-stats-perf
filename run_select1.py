@@ -73,9 +73,9 @@ def fillTable(table, stat):
         if stat == 'none':
             return ''
         elif stat == 'tdigest_and_string':
-            return ', STATISTIC num_stat (u1, u2, u4, u8, i4) TYPE tdigest, STATISTIC str_stat (s8, s16, s64) TYPE granule_string_hash'
+            return ', STATISTIC num_stat (u1, u2, u4, u8, urand, i4) TYPE tdigest, STATISTIC str_stat (s8, s16, s64) TYPE granule_string_hash'
         elif stat == 'tdigest_granule_and_string':
-            return ', STATISTIC num_stat (u1, u2, u4, u8, i4) TYPE granule_tdigest, STATISTIC str_stat (s8, s16, s64) TYPE granule_string_hash'
+            return ', STATISTIC num_stat (u1, u2, u4, u8, urand, i4) TYPE granule_tdigest, STATISTIC str_stat (s8, s16, s64) TYPE granule_string_hash'
 
     ch.run('DROP TABLE IF EXISTS {}.{}'.format(CH_DATABASE, table), answer=False)
     ch.run('''
@@ -86,6 +86,7 @@ CREATE TABLE {}.{}
     u2 UInt64 CODEC(NONE),
     u4 UInt64 CODEC(NONE),
     u8 UInt64 CODEC(NONE),
+    urand UInt64 CODEC(NONE),
     i4 Int32 CODEC(NONE),
     s8 String CODEC(NONE),
     s16 String CODEC(NONE),
@@ -105,6 +106,7 @@ INSERT INTO {database}.{table} SELECT
     number % ({granule} * 2) AS u2,
     number % ({granule} * 4) AS u4,
     number % ({granule} * 8) AS u8,
+    intHash64(number) AS urand,
     number % ({granule} * 4) AS i4,'''.format(database=CH_DATABASE, table=table, granule=GRANULE) +
     "format('clickhouse {}', toString(number % (" + str(GRANULE) + " * 8))) AS s8," +
     "format('clickhouse {}', toString(number % (" + str(GRANULE) + " * 16))) AS s16," +
@@ -159,6 +161,7 @@ def stringTest():
 def granuleTest():
     q = [
         "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'", # granule will be better
+        "SELECT count() FROM {database}.{table} WHERE u1 = 42 AND u2 = 42 AND urand = intHash64(42) AND heavy = 'heavy'", # row will be better
     ]
     return runQuerySet(q)
 
