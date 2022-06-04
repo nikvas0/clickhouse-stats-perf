@@ -161,7 +161,7 @@ def stringTest():
 def granuleTest():
     q = [
         "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'", # granule will be better
-        "SELECT count() FROM {database}.{table} WHERE u1 = 42 AND u2 = 42 AND urand = intHash64(42) AND heavy = 'heavy'", # row will be better
+        "SELECT count() FROM {database}.{table} WHERE u1 < 8100 AND u2 < 16200 AND u4 < 32400 AND urand = 11490350930367293593 AND heavy = 'heavy'", # row will be better
     ]
     return runQuerySet(q)
 
