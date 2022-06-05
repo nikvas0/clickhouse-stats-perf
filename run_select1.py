@@ -38,10 +38,13 @@ class ClickHouse:
 
 ch = ClickHouse(CH_BINARY_PATH)
 
+def dropPageCache():
+    os.system('echo 1 > /proc/sys/vm/drop_caches')
 
 def getMeta(query, count):
     result = []
     for _ in range(count):
+        dropPageCache()
         cur = ch.run(query)
         result.append(cur['statistics'])
     return result
@@ -129,6 +132,7 @@ def runTestOnce(query):
 def runTest(query_template):
     res = dict()
     for test in TESTS:
+        print(ch.run('EXPLAIN SYNTAX ' + query_template.format(database=CH_DATABASE, table=TABLE_BASE+test)))
         res[test] = runTestOnce(query_template.format(database=CH_DATABASE, table=TABLE_BASE+test))
     return res
 
@@ -161,11 +165,11 @@ def stringTest():
 def granuleTest():
     q = [
         "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'", # granule will be better
-        "SELECT count() FROM {database}.{table} WHERE u1 < 8100 AND u2 < 16200 AND u4 < 32400 AND urand = 11490350930367293593 AND heavy = 'heavy'", # row will be better
+        "SELECT count() FROM {database}.{table} WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'", # row will be better
     ]
     return runQuerySet(q)
 
-def printTable(total):
+def printTable(total, val):
     print('\t', end='')
     for test in TESTS:
         print(test, end='\t')
@@ -175,10 +179,11 @@ def printTable(total):
         for ts in total[token]:
             print(ts['query'], end='\t')
             for test in TESTS:
-                print(ts['results'][test]['elapsed'], end='\t')
+                print(ts['results'][test][val], end='\t')
             print()
 
 def main():
+    dropPageCache()
     for test in TESTS:
         fillTable(TABLE_BASE + test, test)
     total = dict()
@@ -187,7 +192,15 @@ def main():
     total['test_granule'] = granuleTest()
     total['stats'] = getStatisticsInfo()
 
-    printTable(total)
+    print()
+    print("elapsed")
+    printTable(total, 'elapsed')
+    print()
+    print('bytes')
+    printTable(total, 'bytes')
+    print()
+    print('rows')
+    printTable(total, 'rows')
 
     print(total)
 
