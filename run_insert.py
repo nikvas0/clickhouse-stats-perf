@@ -14,7 +14,7 @@ CH_DATABASE = 'test'
 CH_BINARY_PATH = '/home/nikita/ClickHouse/build_release/programs/clickhouse'
 
 TABLE_BASE = 't_'
-TESTS = ['none', 'tdigest', 'tdigest_granule', 'string']
+TESTS = ['none', 'one_tdigest', 'tdigest', 'one_tdigest_granule', 'tdigest_granule', 'one_string', 'string', 'all']
 
 random.seed(SEED)
 
@@ -99,9 +99,13 @@ FROM system.numbers LIMIT {}
 
     mp = {
         'none': '',
+        'one_tdigest': ',STATISTIC num_stat (u1) TYPE tdigest ',
         'tdigest': ',STATISTIC num_stat (u1, u2, u3, u4) TYPE tdigest ',
+        'one_tdigest_granule': ',STATISTIC num_stat (u1) TYPE granule_tdigest ',
         'tdigest_granule': ',STATISTIC num_stat (u1, u2, u3, u4) TYPE granule_tdigest ',
+        'one_string' : ',STATISTIC str_stat (s1) TYPE granule_string_hash ',
         'string' : ',STATISTIC str_stat (s1, s2, s3, s4) TYPE granule_string_hash ',
+        'all': ',STATISTIC num_stat1 (u1, u2, u3, u4) TYPE granule_tdigest, STATISTIC str_stat (s1, s2, s3, s4) TYPE granule_string_hash',
     }
 
     result = dict()
