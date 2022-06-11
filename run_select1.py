@@ -6,6 +6,9 @@ import os
 
 #SET allow_experimental_stats_for_prewhere_optimization = 1;
 
+CREATE_TABLES = False
+DROP_TABLES = False
+
 SEED = 42
 RUNS = 5
 GRANULE = 8192
@@ -119,7 +122,6 @@ INSERT INTO {database}.{table} SELECT
 ' LIMIT {rows};'.format(rows=ROWS), answer=False)
 
     ch.run('OPTIMIZE TABLE {}.{} FINAL'.format(CH_DATABASE, table), answer=False)
-    ch.run('SYSTEM RELOAD STATISTICS {}.{}'.format(CH_DATABASE, table), answer=False)
     print(ch.run('SHOW CREATE TABLE {}.{}'.format(CH_DATABASE, table))['data'][0]['statement'])
     print(ch.run('SELECT count() FROM {}.{}'.format(CH_DATABASE, table)))
 
@@ -146,10 +148,10 @@ def compareTest():
     q = [
         "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'", # test u1 vs u8
         "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'", # test u1 vs u8
-        "SELECT count() FROM {database}.{table} WHERE u2 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u2 vs i4
+        # "SELECT count() FROM {database}.{table} WHERE u2 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u2 vs i4
         "SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'", # test u8 vs i4
         "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u1 vs i4
-        "SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u8 vs i4
+        # "SELECT count() FROM {database}.{table} WHERE u8 = 100 AND i4 = 100 AND heavy == 'heavy'", # test equal: u8 vs i4
         "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'", # test equal: u1 vs u8
     ]
     return runQuerySet(q)
@@ -158,13 +160,13 @@ def stringTest():
     q = [
         "SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'", # strings basic
         # "SELECT count() FROM {database}.{table} WHERE s8 = 'unknown' AND s16 = 'clickhouse 42' AND heavy == 'heavy'", # strings not found
-        "SELECT count() FROM {database}.{table} WHERE u1 = 42 AND s64 = 'clickhouse 42' AND heavy == 'heavy'", # better string
+        # "SELECT count() FROM {database}.{table} WHERE u1 = 42 AND s64 = 'clickhouse 42' AND heavy == 'heavy'", # better string
     ]
     return runQuerySet(q)
 
 def granuleTest():
     q = [
-        "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'", # granule will be better
+        # "SELECT count() FROM {database}.{table} WHERE u1 < 100 AND u2 < 1000 AND heavy == 'heavy'", # granule will be better
         "SELECT count() FROM {database}.{table} WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'", # row will be better
     ]
     return runQuerySet(q)
@@ -184,8 +186,12 @@ def printTable(total, val):
 
 def main():
     dropPageCache()
+    if CREATE_TABLES:
+        for test in TESTS:
+            fillTable(TABLE_BASE + test, test)
     for test in TESTS:
-        fillTable(TABLE_BASE + test, test)
+        ch.run('SYSTEM RELOAD STATISTICS {}.{}'.format(CH_DATABASE, TABLE_BASE + test), answer=False)
+
     total = dict()
     total['test_compare'] = compareTest()
     total['test_string'] = stringTest()
@@ -204,7 +210,8 @@ def main():
 
     print(total)
 
-    for test in TESTS:
-        dropTable(TABLE_BASE + test)
+    if DROP_TABLES:
+        for test in TESTS:
+            dropTable(TABLE_BASE + test)
 
 main()

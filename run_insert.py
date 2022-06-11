@@ -92,6 +92,7 @@ INSERT INTO {}.{} SELECT
     toString(intHash64(number * 5243523)) AS s3,
     toString(intHash64(number * 5235222)) AS s4
 FROM system.numbers LIMIT {}
+SETTINGS max_insert_threads = 1, max_threads = 1
 '''.format(CH_DATABASE, table, ROWS)
 
     def drop(table):

@@ -1,0 +1,1637 @@
+Q: SYSTEM RELOAD STATISTICS default.hits_100m_st
+CH: 
+CH: 
+Q: EXPLAIN SYNTAX SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT"
+		},
+		{
+			"explain": "    sum(length(URL)),"
+		},
+		{
+			"explain": "    sum(length(URLDomain))"
+		},
+		{
+			"explain": "FROM default.hits_100m_st"
+		},
+		{
+			"explain": "PREWHERE URLDomain = 'pogoda'"
+		},
+		{
+			"explain": "WHERE (URLDomain = 'pogoda') AND (URL LIKE '%pogoda%')"
+		}
+	],
+
+	"rows": 6,
+
+	"statistics":
+	{
+		"elapsed": 0.000600191,
+		"rows_read": 6,
+		"bytes_read": 215
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT'}, {'explain': '    sum(length(URL)),'}, {'explain': '    sum(length(URLDomain))'}, {'explain': 'FROM default.hits_100m_st'}, {'explain': "PREWHERE URLDomain = 'pogoda'"}, {'explain': "WHERE (URLDomain = 'pogoda') AND (URL LIKE '%pogoda%')"}], 'rows': 6, 'statistics': {'elapsed': 0.000600191, 'rows_read': 6, 'bytes_read': 215}}
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 9.010027204,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 9.219512988,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.996441114,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.977214713,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 9.011277497,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_none WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT"
+		},
+		{
+			"explain": "    sum(length(URL)),"
+		},
+		{
+			"explain": "    sum(length(URLDomain))"
+		},
+		{
+			"explain": "FROM default.hits_100m_none"
+		},
+		{
+			"explain": "PREWHERE URLDomain = 'pogoda'"
+		},
+		{
+			"explain": "WHERE (URLDomain = 'pogoda') AND (URL LIKE '%pogoda%')"
+		}
+	],
+
+	"rows": 6,
+
+	"statistics":
+	{
+		"elapsed": 0.000662325,
+		"rows_read": 6,
+		"bytes_read": 217
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT'}, {'explain': '    sum(length(URL)),'}, {'explain': '    sum(length(URLDomain))'}, {'explain': 'FROM default.hits_100m_none'}, {'explain': "PREWHERE URLDomain = 'pogoda'"}, {'explain': "WHERE (URLDomain = 'pogoda') AND (URL LIKE '%pogoda%')"}], 'rows': 6, 'statistics': {'elapsed': 0.000662325, 'rows_read': 6, 'bytes_read': 217}}
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_none WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 9.06321968,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_none WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.964593863,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_none WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 9.13551054,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_none WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.947258873,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_none WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.991368616,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM default.hits_100m_st"
+		},
+		{
+			"explain": "PREWHERE WatchID = 4894690465724379622"
+		},
+		{
+			"explain": "WHERE (WatchID = 4894690465724379622) AND ((Income = 2) AND (Age = 31))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000671476,
+		"rows_read": 4,
+		"bytes_read": 184
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM default.hits_100m_st'}, {'explain': 'PREWHERE WatchID = 4894690465724379622'}, {'explain': 'WHERE (WatchID = 4894690465724379622) AND ((Income = 2) AND (Age = 31))'}], 'rows': 4, 'statistics': {'elapsed': 0.000671476, 'rows_read': 4, 'bytes_read': 184}}
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 7.402523377,
+		"rows_read": 100000000,
+		"bytes_read": 800000014
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 7.384585964,
+		"rows_read": 100000000,
+		"bytes_read": 800000014
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 7.373723653,
+		"rows_read": 100000000,
+		"bytes_read": 800000014
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 7.391046138,
+		"rows_read": 100000000,
+		"bytes_read": 800000014
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 7.385568264,
+		"rows_read": 100000000,
+		"bytes_read": 800000014
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM default.hits_100m_none"
+		},
+		{
+			"explain": "PREWHERE Age = 31"
+		},
+		{
+			"explain": "WHERE (Age = 31) AND ((Income = 2) AND (WatchID = 4894690465724379622))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000713178,
+		"rows_read": 4,
+		"bytes_read": 165
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM default.hits_100m_none'}, {'explain': 'PREWHERE Age = 31'}, {'explain': 'WHERE (Age = 31) AND ((Income = 2) AND (WatchID = 4894690465724379622))'}], 'rows': 4, 'statistics': {'elapsed': 0.000713178, 'rows_read': 4, 'bytes_read': 165}}
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.018916894,
+		"rows_read": 100000000,
+		"bytes_read": 999934021
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.016498579,
+		"rows_read": 100000000,
+		"bytes_read": 999934021
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.015116217,
+		"rows_read": 100000000,
+		"bytes_read": 999934021
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.009384539,
+		"rows_read": 100000000,
+		"bytes_read": 999934021
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.063806633,
+		"rows_read": 100000000,
+		"bytes_read": 999934021
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM default.hits_100m_st WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM default.hits_100m_st"
+		},
+		{
+			"explain": "PREWHERE UserAgent = 110"
+		},
+		{
+			"explain": "WHERE (UserAgent = 110) AND (Income = 3)"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000655014,
+		"rows_read": 4,
+		"bytes_read": 139
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM default.hits_100m_st'}, {'explain': 'PREWHERE UserAgent = 110'}, {'explain': 'WHERE (UserAgent = 110) AND (Income = 3)'}], 'rows': 4, 'statistics': {'elapsed': 0.000655014, 'rows_read': 4, 'bytes_read': 139}}
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.256589531,
+		"rows_read": 100000000,
+		"bytes_read": 100000000
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.255370742,
+		"rows_read": 100000000,
+		"bytes_read": 100000000
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.250793749,
+		"rows_read": 100000000,
+		"bytes_read": 100000000
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.248514019,
+		"rows_read": 100000000,
+		"bytes_read": 100000000
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.246787816,
+		"rows_read": 100000000,
+		"bytes_read": 100000000
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM default.hits_100m_none WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM default.hits_100m_none"
+		},
+		{
+			"explain": "PREWHERE Income = 3"
+		},
+		{
+			"explain": "WHERE (Income = 3) AND (UserAgent = 110)"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000575291,
+		"rows_read": 4,
+		"bytes_read": 136
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM default.hits_100m_none'}, {'explain': 'PREWHERE Income = 3'}, {'explain': 'WHERE (Income = 3) AND (UserAgent = 110)'}], 'rows': 4, 'statistics': {'elapsed': 0.000575291, 'rows_read': 4, 'bytes_read': 136}}
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.574481829,
+		"rows_read": 100000000,
+		"bytes_read": 199989815
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.569633688,
+		"rows_read": 100000000,
+		"bytes_read": 199989815
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.570931404,
+		"rows_read": 100000000,
+		"bytes_read": 199989815
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.609306003,
+		"rows_read": 100000000,
+		"bytes_read": 199989815
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 3 AND UserAgent = 110
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.568920141,
+		"rows_read": 100000000,
+		"bytes_read": 199989815
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM default.hits_100m_st"
+		},
+		{
+			"explain": "PREWHERE Income = 2"
+		},
+		{
+			"explain": "WHERE (Income = 2) AND (UserAgent = 5)"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000606081,
+		"rows_read": 4,
+		"bytes_read": 132
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM default.hits_100m_st'}, {'explain': 'PREWHERE Income = 2'}, {'explain': 'WHERE (Income = 2) AND (UserAgent = 5)'}], 'rows': 4, 'statistics': {'elapsed': 0.000606081, 'rows_read': 4, 'bytes_read': 132}}
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.572047914,
+		"rows_read": 100000000,
+		"bytes_read": 199996125
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.575494019,
+		"rows_read": 100000000,
+		"bytes_read": 199996125
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.570969741,
+		"rows_read": 100000000,
+		"bytes_read": 199996125
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.566618814,
+		"rows_read": 100000000,
+		"bytes_read": 199996125
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_st WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.571264164,
+		"rows_read": 100000000,
+		"bytes_read": 199996125
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM default.hits_100m_none"
+		},
+		{
+			"explain": "PREWHERE UserAgent = 5"
+		},
+		{
+			"explain": "WHERE (UserAgent = 5) AND (Income = 2)"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.00081514,
+		"rows_read": 4,
+		"bytes_read": 137
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM default.hits_100m_none'}, {'explain': 'PREWHERE UserAgent = 5'}, {'explain': 'WHERE (UserAgent = 5) AND (Income = 2)'}], 'rows': 4, 'statistics': {'elapsed': 0.00081514, 'rows_read': 4, 'bytes_read': 137}}
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.618989303,
+		"rows_read": 100000000,
+		"bytes_read": 199994685
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.568465283,
+		"rows_read": 100000000,
+		"bytes_read": 199994685
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.568636241,
+		"rows_read": 100000000,
+		"bytes_read": 199994685
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.572825309,
+		"rows_read": 100000000,
+		"bytes_read": 199994685
+	}
+}
+
+CH: 
+Q: SELECT count() FROM default.hits_100m_none WHERE Income = 2 AND UserAgent = 5
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "15488793"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 0.567666503,
+		"rows_read": 100000000,
+		"bytes_read": 199994685
+	}
+}
+
+CH: 
+Q: select * from system.statistics
+CH: {
+	"meta":
+	[
+		{
+			"name": "database",
+			"type": "String"
+		},
+		{
+			"name": "table",
+			"type": "String"
+		},
+		{
+			"name": "name",
+			"type": "String"
+		},
+		{
+			"name": "columns",
+			"type": "Array(String)"
+		},
+		{
+			"name": "type",
+			"type": "String"
+		},
+		{
+			"name": "data_in_ram_bytes",
+			"type": "UInt64"
+		},
+		{
+			"name": "data_compressed_bytes",
+			"type": "UInt64"
+		},
+		{
+			"name": "data_uncompressed_bytes",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"database": "default",
+			"table": "hits_100m_st",
+			"name": "row_num",
+			"columns": ["WatchID","UserID","URLHash"],
+			"type": "tdigest",
+			"data_in_ram_bytes": "34176",
+			"data_compressed_bytes": "20311",
+			"data_uncompressed_bytes": "25693"
+		},
+		{
+			"database": "default",
+			"table": "hits_100m_st",
+			"name": "granule_num",
+			"columns": ["UserAgent","Age","Income","RegionID"],
+			"type": "granule_tdigest",
+			"data_in_ram_bytes": "46080",
+			"data_compressed_bytes": "11777",
+			"data_uncompressed_bytes": "33078"
+		},
+		{
+			"database": "default",
+			"table": "hits_100m_st",
+			"name": "str",
+			"columns": ["URLDomain","URL","Referer"],
+			"type": "granule_string_hash",
+			"data_in_ram_bytes": "12648",
+			"data_compressed_bytes": "12054",
+			"data_uncompressed_bytes": "12502"
+		},
+		{
+			"database": "test",
+			"table": "t_tdigest_and_string",
+			"name": "num_stat",
+			"columns": ["u1","u2","u4","u8","urand","i4"],
+			"type": "tdigest",
+			"data_in_ram_bytes": "68352",
+			"data_compressed_bytes": "31885",
+			"data_uncompressed_bytes": "47937"
+		},
+		{
+			"database": "test",
+			"table": "t_tdigest_and_string",
+			"name": "str_stat",
+			"columns": ["s8","s16","s64"],
+			"type": "granule_string_hash",
+			"data_in_ram_bytes": "12648",
+			"data_compressed_bytes": "9033",
+			"data_uncompressed_bytes": "12491"
+		},
+		{
+			"database": "test",
+			"table": "t_tdigest_granule_and_string",
+			"name": "num_stat",
+			"columns": ["u1","u2","u4","u8","urand","i4"],
+			"type": "granule_tdigest",
+			"data_in_ram_bytes": "136704",
+			"data_compressed_bytes": "29674",
+			"data_uncompressed_bytes": "81371"
+		},
+		{
+			"database": "test",
+			"table": "t_tdigest_granule_and_string",
+			"name": "str_stat",
+			"columns": ["s8","s16","s64"],
+			"type": "granule_string_hash",
+			"data_in_ram_bytes": "12648",
+			"data_compressed_bytes": "28543",
+			"data_uncompressed_bytes": "37473"
+		}
+	],
+
+	"rows": 7,
+
+	"statistics":
+	{
+		"elapsed": 0.000896417,
+		"rows_read": 7,
+		"bytes_read": 1162
+	}
+}
+
+CH: 
+
+elapsed
+	_st	_none	
+test_compare :
+SELECT sum(length(URL)), sum(length(URLDomain)) FROM {database}.{table} WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'	8.977214713	8.947258873	
+SELECT count() FROM {database}.{table} WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622	7.373723653	8.009384539	
+SELECT count() FROM {database}.{table} WHERE Income = 3 AND UserAgent = 110	0.246787816	0.568920141	
+SELECT count() FROM {database}.{table} WHERE Income = 2 AND UserAgent = 5	0.566618814	0.567666503	
+
+bytes
+	_st	_none	
+test_compare :
+SELECT sum(length(URL)), sum(length(URLDomain)) FROM {database}.{table} WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'	3154095400	3154095400	
+SELECT count() FROM {database}.{table} WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622	800000014	999934021	
+SELECT count() FROM {database}.{table} WHERE Income = 3 AND UserAgent = 110	100000000	199989815	
+SELECT count() FROM {database}.{table} WHERE Income = 2 AND UserAgent = 5	199996125	199994685	
+
+rows
+	_st	_none	
+test_compare :
+SELECT sum(length(URL)), sum(length(URLDomain)) FROM {database}.{table} WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'	100000000	100000000	
+SELECT count() FROM {database}.{table} WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622	100000000	100000000	
+SELECT count() FROM {database}.{table} WHERE Income = 3 AND UserAgent = 110	100000000	100000000	
+SELECT count() FROM {database}.{table} WHERE Income = 2 AND UserAgent = 5	100000000	100000000	
+{'test_compare': [{'results': {'_st': {'elapsed': 8.977214713, 'rows': 100000000, 'bytes': 3154095400}, '_none': {'elapsed': 8.947258873, 'rows': 100000000, 'bytes': 3154095400}}, 'query': "SELECT sum(length(URL)), sum(length(URLDomain)) FROM {database}.{table} WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'"}, {'results': {'_st': {'elapsed': 7.373723653, 'rows': 100000000, 'bytes': 800000014}, '_none': {'elapsed': 8.009384539, 'rows': 100000000, 'bytes': 999934021}}, 'query': 'SELECT count() FROM {database}.{table} WHERE Income = 2 AND Age = 31 AND WatchID = 4894690465724379622'}, {'results': {'_st': {'elapsed': 0.246787816, 'rows': 100000000, 'bytes': 100000000}, '_none': {'elapsed': 0.568920141, 'rows': 100000000, 'bytes': 199989815}}, 'query': 'SELECT count() FROM {database}.{table} WHERE Income = 3 AND UserAgent = 110'}, {'results': {'_st': {'elapsed': 0.566618814, 'rows': 100000000, 'bytes': 199996125}, '_none': {'elapsed': 0.567666503, 'rows': 100000000, 'bytes': 199994685}}, 'query': 'SELECT count() FROM {database}.{table} WHERE Income = 2 AND UserAgent = 5'}], 'stats': [{'database': 'default', 'table': 'hits_100m_st', 'name': 'row_num', 'columns': ['WatchID', 'UserID', 'URLHash'], 'type': 'tdigest', 'data_in_ram_bytes': '34176', 'data_compressed_bytes': '20311', 'data_uncompressed_bytes': '25693'}, {'database': 'default', 'table': 'hits_100m_st', 'name': 'granule_num', 'columns': ['UserAgent', 'Age', 'Income', 'RegionID'], 'type': 'granule_tdigest', 'data_in_ram_bytes': '46080', 'data_compressed_bytes': '11777', 'data_uncompressed_bytes': '33078'}, {'database': 'default', 'table': 'hits_100m_st', 'name': 'str', 'columns': ['URLDomain', 'URL', 'Referer'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '12648', 'data_compressed_bytes': '12054', 'data_uncompressed_bytes': '12502'}, {'database': 'test', 'table': 't_tdigest_and_string', 'name': 'num_stat', 'columns': ['u1', 'u2', 'u4', 'u8', 'urand', 'i4'], 'type': 'tdigest', 'data_in_ram_bytes': '68352', 'data_compressed_bytes': '31885', 'data_uncompressed_bytes': '47937'}, {'database': 'test', 'table': 't_tdigest_and_string', 'name': 'str_stat', 'columns': ['s8', 's16', 's64'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '12648', 'data_compressed_bytes': '9033', 'data_uncompressed_bytes': '12491'}, {'database': 'test', 'table': 't_tdigest_granule_and_string', 'name': 'num_stat', 'columns': ['u1', 'u2', 'u4', 'u8', 'urand', 'i4'], 'type': 'granule_tdigest', 'data_in_ram_bytes': '136704', 'data_compressed_bytes': '29674', 'data_uncompressed_bytes': '81371'}, {'database': 'test', 'table': 't_tdigest_granule_and_string', 'name': 'str_stat', 'columns': ['s8', 's16', 's64'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '12648', 'data_compressed_bytes': '28543', 'data_uncompressed_bytes': '37473'}]}

@@ -1,0 +1,118 @@
+Q: SYSTEM RELOAD STATISTICS default.hits_100m_st
+CH: 
+CH: 
+Q: EXPLAIN SYNTAX SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT"
+		},
+		{
+			"explain": "    sum(length(URL)),"
+		},
+		{
+			"explain": "    sum(length(URLDomain))"
+		},
+		{
+			"explain": "FROM default.hits_100m_st"
+		},
+		{
+			"explain": "PREWHERE URLDomain = 'pogoda'"
+		},
+		{
+			"explain": "WHERE (URLDomain = 'pogoda') AND (URL LIKE '%pogoda%')"
+		}
+	],
+
+	"rows": 6,
+
+	"statistics":
+	{
+		"elapsed": 0.000532971,
+		"rows_read": 6,
+		"bytes_read": 215
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT'}, {'explain': '    sum(length(URL)),'}, {'explain': '    sum(length(URLDomain))'}, {'explain': 'FROM default.hits_100m_st'}, {'explain': "PREWHERE URLDomain = 'pogoda'"}, {'explain': "WHERE (URLDomain = 'pogoda') AND (URL LIKE '%pogoda%')"}], 'rows': 6, 'statistics': {'elapsed': 0.000532971, 'rows_read': 6, 'bytes_read': 215}}
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 9.057840865,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: {
+	"meta":
+	[
+		{
+			"name": "sum(length(URL))",
+			"type": "UInt64"
+		},
+		{
+			"name": "sum(length(URLDomain))",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"sum(length(URL))": "3299481",
+			"sum(length(URLDomain))": "789312"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 8.994949082,
+		"rows_read": 100000000,
+		"bytes_read": 3154095400
+	}
+}
+
+CH: 
+Q: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'
+CH: 
+CH: Code: 32. DB::Exception: Attempt to read after eof: while receiving packet from localhost:9000: (in query: SELECT sum(length(URL)), sum(length(URLDomain)) FROM default.hits_100m_st WHERE URLDomain = 'pogoda' AND URL LIKE '%pogoda%'). (ATTEMPT_TO_READ_AFTER_EOF)
+
+

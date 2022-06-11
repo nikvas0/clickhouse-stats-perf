@@ -1,0 +1,3901 @@
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_none"
+		},
+		{
+			"explain": "PREWHERE (100 < u2) AND (u2 < 200)"
+		},
+		{
+			"explain": "WHERE ((100 < u2) AND (u2 < 200)) AND ((100 < u8) AND (u8 < 200) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000544783,
+		"rows_read": 4,
+		"bytes_read": 187
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_none'}, {'explain': 'PREWHERE (100 < u2) AND (u2 < 200)'}, {'explain': "WHERE ((100 < u2) AND (u2 < 200)) AND ((100 < u8) AND (u8 < 200) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000544783, 'rows_read': 4, 'bytes_read': 187}}
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.839639512,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.646204574,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.718534678,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.651446551,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.661762634,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_and_string"
+		},
+		{
+			"explain": "PREWHERE (100 < u8) AND (u8 < 200)"
+		},
+		{
+			"explain": "WHERE ((100 < u8) AND (u8 < 200)) AND ((100 < u2) AND (u2 < 200) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000580738,
+		"rows_read": 4,
+		"bytes_read": 201
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_and_string'}, {'explain': 'PREWHERE (100 < u8) AND (u8 < 200)'}, {'explain': "WHERE ((100 < u8) AND (u8 < 200)) AND ((100 < u2) AND (u2 < 200) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000580738, 'rows_read': 4, 'bytes_read': 201}}
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.683750348,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.685481289,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.650539818,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.645881971,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.652137963,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_granule_and_string"
+		},
+		{
+			"explain": "PREWHERE (100 < u8) AND (u8 < 200)"
+		},
+		{
+			"explain": "WHERE ((100 < u8) AND (u8 < 200)) AND ((100 < u2) AND (u2 < 200) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000582832,
+		"rows_read": 4,
+		"bytes_read": 209
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_granule_and_string'}, {'explain': 'PREWHERE (100 < u8) AND (u8 < 200)'}, {'explain': "WHERE ((100 < u8) AND (u8 < 200)) AND ((100 < u2) AND (u2 < 200) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000582832, 'rows_read': 4, 'bytes_read': 209}}
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.690320094,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.660707475,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.656821117,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.661527391,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.651826522,
+		"rows_read": 67108864,
+		"bytes_read": 550592512
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_none"
+		},
+		{
+			"explain": "PREWHERE (100 < u2) AND (u2 < 200)"
+		},
+		{
+			"explain": "WHERE ((100 < u2) AND (u2 < 200)) AND ((100 < u8) AND (u8 < 1000) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000441525,
+		"rows_read": 4,
+		"bytes_read": 188
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_none'}, {'explain': 'PREWHERE (100 < u2) AND (u2 < 200)'}, {'explain': "WHERE ((100 < u2) AND (u2 < 200)) AND ((100 < u8) AND (u8 < 1000) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000441525, 'rows_read': 4, 'bytes_read': 188}}
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.68816032,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.669497374,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.698229424,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.650964174,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.668214824,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_and_string"
+		},
+		{
+			"explain": "PREWHERE (100 < u2) AND (u2 < 200)"
+		},
+		{
+			"explain": "WHERE ((100 < u2) AND (u2 < 200)) AND ((100 < u8) AND (u8 < 1000) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000574053,
+		"rows_read": 4,
+		"bytes_read": 202
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_and_string'}, {'explain': 'PREWHERE (100 < u2) AND (u2 < 200)'}, {'explain': "WHERE ((100 < u2) AND (u2 < 200)) AND ((100 < u8) AND (u8 < 1000) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000574053, 'rows_read': 4, 'bytes_read': 202}}
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.663063854,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.632644676,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.650444999,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.651648795,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 40.649989827,
+		"rows_read": 67108864,
+		"bytes_read": 591757312
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_granule_and_string"
+		},
+		{
+			"explain": "PREWHERE (100 < u8) AND (u8 < 1000)"
+		},
+		{
+			"explain": "WHERE ((100 < u8) AND (u8 < 1000)) AND ((100 < u2) AND (u2 < 200) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000584913,
+		"rows_read": 4,
+		"bytes_read": 211
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_granule_and_string'}, {'explain': 'PREWHERE (100 < u8) AND (u8 < 1000)'}, {'explain': "WHERE ((100 < u8) AND (u8 < 1000)) AND ((100 < u2) AND (u2 < 200) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000584913, 'rows_read': 4, 'bytes_read': 211}}
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.663391712,
+		"rows_read": 67108864,
+		"bytes_read": 605478912
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.663044894,
+		"rows_read": 67108864,
+		"bytes_read": 605478912
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.661074563,
+		"rows_read": 67108864,
+		"bytes_read": 605478912
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.656618875,
+		"rows_read": 67108864,
+		"bytes_read": 605478912
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.657582955,
+		"rows_read": 67108864,
+		"bytes_read": 605478912
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_none WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_none"
+		},
+		{
+			"explain": "PREWHERE i4 < 100"
+		},
+		{
+			"explain": "WHERE (i4 < 100) AND ((u8 < 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000714658,
+		"rows_read": 4,
+		"bytes_read": 138
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_none'}, {'explain': 'PREWHERE i4 < 100'}, {'explain': "WHERE (i4 < 100) AND ((u8 < 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000714658, 'rows_read': 4, 'bytes_read': 138}}
+Q: SELECT count() FROM test.t_none WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.093167872,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.088128595,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.082708603,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.078349108,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.080791645,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_and_string"
+		},
+		{
+			"explain": "PREWHERE i4 < 100"
+		},
+		{
+			"explain": "WHERE (i4 < 100) AND ((u8 < 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000634695,
+		"rows_read": 4,
+		"bytes_read": 152
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_and_string'}, {'explain': 'PREWHERE i4 < 100'}, {'explain': "WHERE (i4 < 100) AND ((u8 < 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000634695, 'rows_read': 4, 'bytes_read': 152}}
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.081296497,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.087698708,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.11348467,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.07688702,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.076152886,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_granule_and_string"
+		},
+		{
+			"explain": "PREWHERE i4 < 100"
+		},
+		{
+			"explain": "WHERE (i4 < 100) AND ((u8 < 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000507137,
+		"rows_read": 4,
+		"bytes_read": 160
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_granule_and_string'}, {'explain': 'PREWHERE i4 < 100'}, {'explain': "WHERE (i4 < 100) AND ((u8 < 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000507137, 'rows_read': 4, 'bytes_read': 160}}
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.117670536,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.184788752,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.302926535,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.090367231,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.083912218,
+		"rows_read": 67108864,
+		"bytes_read": 282157056
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_none WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_none"
+		},
+		{
+			"explain": "PREWHERE i4 = 100"
+		},
+		{
+			"explain": "WHERE (i4 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000598998,
+		"rows_read": 4,
+		"bytes_read": 138
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_none'}, {'explain': 'PREWHERE i4 = 100'}, {'explain': "WHERE (i4 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000598998, 'rows_read': 4, 'bytes_read': 138}}
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.086444927,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.08262495,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.079850623,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.085959685,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.080018699,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_and_string"
+		},
+		{
+			"explain": "PREWHERE i4 = 100"
+		},
+		{
+			"explain": "WHERE (i4 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000522984,
+		"rows_read": 4,
+		"bytes_read": 152
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_and_string'}, {'explain': 'PREWHERE i4 = 100'}, {'explain': "WHERE (i4 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000522984, 'rows_read': 4, 'bytes_read': 152}}
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.086646936,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.081483859,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.074705056,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.07215964,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.074043464,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_granule_and_string"
+		},
+		{
+			"explain": "PREWHERE i4 = 100"
+		},
+		{
+			"explain": "WHERE (i4 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000557798,
+		"rows_read": 4,
+		"bytes_read": 160
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_granule_and_string'}, {'explain': 'PREWHERE i4 = 100'}, {'explain': "WHERE (i4 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000557798, 'rows_read': 4, 'bytes_read': 160}}
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.092015227,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.079313193,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.082276362,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.084088047,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 27.084898429,
+		"rows_read": 67108864,
+		"bytes_read": 282294272
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_none WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_none"
+		},
+		{
+			"explain": "PREWHERE u1 = 100"
+		},
+		{
+			"explain": "WHERE (u1 = 100) AND ((u8 = 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000666342,
+		"rows_read": 4,
+		"bytes_read": 138
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_none'}, {'explain': 'PREWHERE u1 = 100'}, {'explain': "WHERE (u1 = 100) AND ((u8 = 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000666342, 'rows_read': 4, 'bytes_read': 138}}
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.505227142,
+		"rows_read": 67108864,
+		"bytes_read": 592306176
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.459188825,
+		"rows_read": 67108864,
+		"bytes_read": 592306176
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.453024436,
+		"rows_read": 67108864,
+		"bytes_read": 592306176
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.455560858,
+		"rows_read": 67108864,
+		"bytes_read": 592306176
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.462130751,
+		"rows_read": 67108864,
+		"bytes_read": 592306176
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_and_string"
+		},
+		{
+			"explain": "PREWHERE u8 = 100"
+		},
+		{
+			"explain": "WHERE (u8 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000723432,
+		"rows_read": 4,
+		"bytes_read": 152
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_and_string'}, {'explain': 'PREWHERE u8 = 100'}, {'explain': "WHERE (u8 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000723432, 'rows_read': 4, 'bytes_read': 152}}
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.659678962,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.649874515,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.662945484,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.646103261,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.659398591,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_granule_and_string"
+		},
+		{
+			"explain": "PREWHERE u8 = 100"
+		},
+		{
+			"explain": "WHERE (u8 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000691423,
+		"rows_read": 4,
+		"bytes_read": 160
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_granule_and_string'}, {'explain': 'PREWHERE u8 = 100'}, {'explain': "WHERE (u8 = 100) AND ((u1 = 100) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000691423, 'rows_read': 4, 'bytes_read': 160}}
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.66097103,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.660793729,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.653654115,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.661051828,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 19.696283842,
+		"rows_read": 67108864,
+		"bytes_read": 543800320
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_none WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_none"
+		},
+		{
+			"explain": "PREWHERE s8 = 'clickhouse 42'"
+		},
+		{
+			"explain": "WHERE (s8 = 'clickhouse 42') AND ((s16 = 'clickhouse 42') AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000805977,
+		"rows_read": 4,
+		"bytes_read": 175
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_none'}, {'explain': "PREWHERE s8 = 'clickhouse 42'"}, {'explain': "WHERE (s8 = 'clickhouse 42') AND ((s16 = 'clickhouse 42') AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000805977, 'rows_read': 4, 'bytes_read': 175}}
+Q: SELECT count() FROM test.t_none WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 30.186786033,
+		"rows_read": 67108864,
+		"bytes_read": 1669972480
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 30.117298149,
+		"rows_read": 67108864,
+		"bytes_read": 1669972480
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 30.117645348,
+		"rows_read": 67108864,
+		"bytes_read": 1669972480
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 30.108958913,
+		"rows_read": 67108864,
+		"bytes_read": 1669972480
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 30.102879302,
+		"rows_read": 67108864,
+		"bytes_read": 1669972480
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_and_string"
+		},
+		{
+			"explain": "PREWHERE (s8 = 'clickhouse 42') AND (heavy = 'heavy')"
+		},
+		{
+			"explain": "WHERE ((s8 = 'clickhouse 42') AND (heavy = 'heavy')) AND (s16 = 'clickhouse 42')"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000623283,
+		"rows_read": 4,
+		"bytes_read": 213
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_and_string'}, {'explain': "PREWHERE (s8 = 'clickhouse 42') AND (heavy = 'heavy')"}, {'explain': "WHERE ((s8 = 'clickhouse 42') AND (heavy = 'heavy')) AND (s16 = 'clickhouse 42')"}], 'rows': 4, 'statistics': {'elapsed': 0.000623283, 'rows_read': 4, 'bytes_read': 213}}
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.936585493,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 42.0460015,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 42.075328976,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.887190169,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.939219308,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_granule_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_granule_and_string"
+		},
+		{
+			"explain": "PREWHERE (s8 = 'clickhouse 42') AND (heavy = 'heavy')"
+		},
+		{
+			"explain": "WHERE ((s8 = 'clickhouse 42') AND (heavy = 'heavy')) AND (s16 = 'clickhouse 42')"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000514542,
+		"rows_read": 4,
+		"bytes_read": 221
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_granule_and_string'}, {'explain': "PREWHERE (s8 = 'clickhouse 42') AND (heavy = 'heavy')"}, {'explain': "WHERE ((s8 = 'clickhouse 42') AND (heavy = 'heavy')) AND (s16 = 'clickhouse 42')"}], 'rows': 4, 'statistics': {'elapsed': 0.000514542, 'rows_read': 4, 'bytes_read': 221}}
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.95438211,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.935964427,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.919331054,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.911338688,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 41.944735586,
+		"rows_read": 67108864,
+		"bytes_read": 5625767936
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_none WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_none"
+		},
+		{
+			"explain": "PREWHERE u8 < 22000"
+		},
+		{
+			"explain": "WHERE (u8 < 22000) AND ((11490350930367293590 < urand) AND (urand < 11490350930367293600) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000532276,
+		"rows_read": 4,
+		"bytes_read": 197
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_none'}, {'explain': 'PREWHERE u8 < 22000'}, {'explain': "WHERE (u8 < 22000) AND ((11490350930367293590 < urand) AND (urand < 11490350930367293600) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000532276, 'rows_read': 4, 'bytes_read': 197}}
+Q: SELECT count() FROM test.t_none WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.431979771,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.440763228,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.418983735,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.409727164,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_none WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.433636966,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_and_string"
+		},
+		{
+			"explain": "PREWHERE (11490350930367293590 < urand) AND (urand < 11490350930367293600)"
+		},
+		{
+			"explain": "WHERE ((11490350930367293590 < urand) AND (urand < 11490350930367293600)) AND ((u8 < 22000) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000557677,
+		"rows_read": 4,
+		"bytes_read": 268
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_and_string'}, {'explain': 'PREWHERE (11490350930367293590 < urand) AND (urand < 11490350930367293600)'}, {'explain': "WHERE ((11490350930367293590 < urand) AND (urand < 11490350930367293600)) AND ((u8 < 22000) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000557677, 'rows_read': 4, 'bytes_read': 268}}
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 4.912432514,
+		"rows_read": 67108864,
+		"bytes_read": 536873793
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 4.894190975,
+		"rows_read": 67108864,
+		"bytes_read": 536873793
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 4.893593765,
+		"rows_read": 67108864,
+		"bytes_read": 536873793
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 4.896642934,
+		"rows_read": 67108864,
+		"bytes_read": 536873793
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 4.898859992,
+		"rows_read": 67108864,
+		"bytes_read": 536873793
+	}
+}
+
+CH: 
+Q: EXPLAIN SYNTAX SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "explain",
+			"type": "String"
+		}
+	],
+
+	"data":
+	[
+		{
+			"explain": "SELECT count()"
+		},
+		{
+			"explain": "FROM test.t_tdigest_granule_and_string"
+		},
+		{
+			"explain": "PREWHERE u8 < 22000"
+		},
+		{
+			"explain": "WHERE (u8 < 22000) AND ((11490350930367293590 < urand) AND (urand < 11490350930367293600) AND (heavy = 'heavy'))"
+		}
+	],
+
+	"rows": 4,
+
+	"statistics":
+	{
+		"elapsed": 0.000517871,
+		"rows_read": 4,
+		"bytes_read": 219
+	}
+}
+
+CH: 
+{'meta': [{'name': 'explain', 'type': 'String'}], 'data': [{'explain': 'SELECT count()'}, {'explain': 'FROM test.t_tdigest_granule_and_string'}, {'explain': 'PREWHERE u8 < 22000'}, {'explain': "WHERE (u8 < 22000) AND ((11490350930367293590 < urand) AND (urand < 11490350930367293600) AND (heavy = 'heavy'))"}], 'rows': 4, 'statistics': {'elapsed': 0.000517871, 'rows_read': 4, 'bytes_read': 219}}
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.444746571,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.438511063,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.44160064,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.436249161,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: SELECT count() FROM test.t_tdigest_granule_and_string WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'
+CH: {
+	"meta":
+	[
+		{
+			"name": "count()",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"count()": "0"
+		}
+	],
+
+	"rows": 1,
+
+	"statistics":
+	{
+		"elapsed": 34.422425837,
+		"rows_read": 67108864,
+		"bytes_read": 2222981120
+	}
+}
+
+CH: 
+Q: select * from system.statistics
+CH: {
+	"meta":
+	[
+		{
+			"name": "database",
+			"type": "String"
+		},
+		{
+			"name": "table",
+			"type": "String"
+		},
+		{
+			"name": "name",
+			"type": "String"
+		},
+		{
+			"name": "columns",
+			"type": "Array(String)"
+		},
+		{
+			"name": "type",
+			"type": "String"
+		},
+		{
+			"name": "data_in_ram_bytes",
+			"type": "UInt64"
+		},
+		{
+			"name": "data_compressed_bytes",
+			"type": "UInt64"
+		},
+		{
+			"name": "data_uncompressed_bytes",
+			"type": "UInt64"
+		}
+	],
+
+	"data":
+	[
+		{
+			"database": "default",
+			"table": "hits_100m_st",
+			"name": "row_num",
+			"columns": ["WatchID","UserID","URLHash"],
+			"type": "tdigest",
+			"data_in_ram_bytes": "34176",
+			"data_compressed_bytes": "20311",
+			"data_uncompressed_bytes": "25693"
+		},
+		{
+			"database": "default",
+			"table": "hits_100m_st",
+			"name": "granule_num",
+			"columns": ["UserAgent","Age","Income","RegionID"],
+			"type": "granule_tdigest",
+			"data_in_ram_bytes": "46080",
+			"data_compressed_bytes": "11777",
+			"data_uncompressed_bytes": "33078"
+		},
+		{
+			"database": "default",
+			"table": "hits_100m_st",
+			"name": "str",
+			"columns": ["URLDomain","URL","Referer"],
+			"type": "granule_string_hash",
+			"data_in_ram_bytes": "12648",
+			"data_compressed_bytes": "12054",
+			"data_uncompressed_bytes": "12502"
+		},
+		{
+			"database": "test",
+			"table": "t_tdigest_and_string",
+			"name": "num_stat",
+			"columns": ["u1","u2","u4","u8","urand","i4"],
+			"type": "tdigest",
+			"data_in_ram_bytes": "68352",
+			"data_compressed_bytes": "31885",
+			"data_uncompressed_bytes": "47937"
+		},
+		{
+			"database": "test",
+			"table": "t_tdigest_and_string",
+			"name": "str_stat",
+			"columns": ["s8","s16","s64"],
+			"type": "granule_string_hash",
+			"data_in_ram_bytes": "12648",
+			"data_compressed_bytes": "9033",
+			"data_uncompressed_bytes": "12491"
+		},
+		{
+			"database": "test",
+			"table": "t_tdigest_granule_and_string",
+			"name": "num_stat",
+			"columns": ["u1","u2","u4","u8","urand","i4"],
+			"type": "granule_tdigest",
+			"data_in_ram_bytes": "69120",
+			"data_compressed_bytes": "16098",
+			"data_uncompressed_bytes": "44285"
+		},
+		{
+			"database": "test",
+			"table": "t_tdigest_granule_and_string",
+			"name": "str_stat",
+			"columns": ["s8","s16","s64"],
+			"type": "granule_string_hash",
+			"data_in_ram_bytes": "12648",
+			"data_compressed_bytes": "9033",
+			"data_uncompressed_bytes": "12491"
+		}
+	],
+
+	"rows": 7,
+
+	"statistics":
+	{
+		"elapsed": 0.000595752,
+		"rows_read": 7,
+		"bytes_read": 1162
+	}
+}
+
+CH: 
+
+elapsed
+	none	tdigest_and_string	tdigest_granule_and_string	
+test_compare :
+SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'	40.646204574	19.645881971	19.651826522	
+SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'	40.650964174	40.632644676	19.656618875	
+SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'	27.078349108	27.076152886	27.083912218	
+SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'	27.079850623	27.07215964	27.079313193	
+SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'	41.453024436	19.646103261	19.653654115	
+test_string :
+SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'	30.102879302	41.887190169	41.911338688	
+test_granule :
+SELECT count() FROM {database}.{table} WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'	34.409727164	4.893593765	34.422425837	
+
+bytes
+	none	tdigest_and_string	tdigest_granule_and_string	
+test_compare :
+SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'	591757312	550592512	550592512	
+SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'	591757312	591757312	605478912	
+SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'	282157056	282157056	282157056	
+SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'	282294272	282294272	282294272	
+SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'	592306176	543800320	543800320	
+test_string :
+SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'	1669972480	5625767936	5625767936	
+test_granule :
+SELECT count() FROM {database}.{table} WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'	2222981120	536873793	2222981120	
+
+rows
+	none	tdigest_and_string	tdigest_granule_and_string	
+test_compare :
+SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'	67108864	67108864	67108864	
+SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'	67108864	67108864	67108864	
+SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'	67108864	67108864	67108864	
+SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'	67108864	67108864	67108864	
+SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'	67108864	67108864	67108864	
+test_string :
+SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'	67108864	67108864	67108864	
+test_granule :
+SELECT count() FROM {database}.{table} WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'	67108864	67108864	67108864	
+{'test_compare': [{'results': {'none': {'elapsed': 40.646204574, 'rows': 67108864, 'bytes': 591757312}, 'tdigest_and_string': {'elapsed': 19.645881971, 'rows': 67108864, 'bytes': 550592512}, 'tdigest_granule_and_string': {'elapsed': 19.651826522, 'rows': 67108864, 'bytes': 550592512}}, 'query': "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 200 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 40.650964174, 'rows': 67108864, 'bytes': 591757312}, 'tdigest_and_string': {'elapsed': 40.632644676, 'rows': 67108864, 'bytes': 591757312}, 'tdigest_granule_and_string': {'elapsed': 19.656618875, 'rows': 67108864, 'bytes': 605478912}}, 'query': "SELECT count() FROM {database}.{table} WHERE 100 < u2 AND u2 < 200 AND 100 < u8 AND u8 < 1000 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 27.078349108, 'rows': 67108864, 'bytes': 282157056}, 'tdigest_and_string': {'elapsed': 27.076152886, 'rows': 67108864, 'bytes': 282157056}, 'tdigest_granule_and_string': {'elapsed': 27.083912218, 'rows': 67108864, 'bytes': 282157056}}, 'query': "SELECT count() FROM {database}.{table} WHERE u8 < 100 AND i4 < 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 27.079850623, 'rows': 67108864, 'bytes': 282294272}, 'tdigest_and_string': {'elapsed': 27.07215964, 'rows': 67108864, 'bytes': 282294272}, 'tdigest_granule_and_string': {'elapsed': 27.079313193, 'rows': 67108864, 'bytes': 282294272}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND i4 = 100 AND heavy == 'heavy'"}, {'results': {'none': {'elapsed': 41.453024436, 'rows': 67108864, 'bytes': 592306176}, 'tdigest_and_string': {'elapsed': 19.646103261, 'rows': 67108864, 'bytes': 543800320}, 'tdigest_granule_and_string': {'elapsed': 19.653654115, 'rows': 67108864, 'bytes': 543800320}}, 'query': "SELECT count() FROM {database}.{table} WHERE u1 = 100 AND u8 = 100 AND heavy == 'heavy'"}], 'test_string': [{'results': {'none': {'elapsed': 30.102879302, 'rows': 67108864, 'bytes': 1669972480}, 'tdigest_and_string': {'elapsed': 41.887190169, 'rows': 67108864, 'bytes': 5625767936}, 'tdigest_granule_and_string': {'elapsed': 41.911338688, 'rows': 67108864, 'bytes': 5625767936}}, 'query': "SELECT count() FROM {database}.{table} WHERE s8 = 'clickhouse 42' AND s16 = 'clickhouse 42' AND heavy == 'heavy'"}], 'test_granule': [{'results': {'none': {'elapsed': 34.409727164, 'rows': 67108864, 'bytes': 2222981120}, 'tdigest_and_string': {'elapsed': 4.893593765, 'rows': 67108864, 'bytes': 536873793}, 'tdigest_granule_and_string': {'elapsed': 34.422425837, 'rows': 67108864, 'bytes': 2222981120}}, 'query': "SELECT count() FROM {database}.{table} WHERE u8 < 22000 AND 11490350930367293590 < urand AND urand < 11490350930367293600 AND heavy = 'heavy'"}], 'stats': [{'database': 'default', 'table': 'hits_100m_st', 'name': 'row_num', 'columns': ['WatchID', 'UserID', 'URLHash'], 'type': 'tdigest', 'data_in_ram_bytes': '34176', 'data_compressed_bytes': '20311', 'data_uncompressed_bytes': '25693'}, {'database': 'default', 'table': 'hits_100m_st', 'name': 'granule_num', 'columns': ['UserAgent', 'Age', 'Income', 'RegionID'], 'type': 'granule_tdigest', 'data_in_ram_bytes': '46080', 'data_compressed_bytes': '11777', 'data_uncompressed_bytes': '33078'}, {'database': 'default', 'table': 'hits_100m_st', 'name': 'str', 'columns': ['URLDomain', 'URL', 'Referer'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '12648', 'data_compressed_bytes': '12054', 'data_uncompressed_bytes': '12502'}, {'database': 'test', 'table': 't_tdigest_and_string', 'name': 'num_stat', 'columns': ['u1', 'u2', 'u4', 'u8', 'urand', 'i4'], 'type': 'tdigest', 'data_in_ram_bytes': '68352', 'data_compressed_bytes': '31885', 'data_uncompressed_bytes': '47937'}, {'database': 'test', 'table': 't_tdigest_and_string', 'name': 'str_stat', 'columns': ['s8', 's16', 's64'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '12648', 'data_compressed_bytes': '9033', 'data_uncompressed_bytes': '12491'}, {'database': 'test', 'table': 't_tdigest_granule_and_string', 'name': 'num_stat', 'columns': ['u1', 'u2', 'u4', 'u8', 'urand', 'i4'], 'type': 'granule_tdigest', 'data_in_ram_bytes': '69120', 'data_compressed_bytes': '16098', 'data_uncompressed_bytes': '44285'}, {'database': 'test', 'table': 't_tdigest_granule_and_string', 'name': 'str_stat', 'columns': ['s8', 's16', 's64'], 'type': 'granule_string_hash', 'data_in_ram_bytes': '12648', 'data_compressed_bytes': '9033', 'data_uncompressed_bytes': '12491'}]}
