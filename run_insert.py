@@ -96,7 +96,7 @@ SETTINGS max_insert_threads = 1, max_threads = 1
 '''.format(CH_DATABASE, table, ROWS)
 
     def drop(table):
-        return 'DROP TABLE IF EXISTS {}.{}'.format(CH_DATABASE, table)
+        return 'DROP TABLE IF EXISTS {}.{} SYNC'.format(CH_DATABASE, table)
 
     mp = {
         'none': '',
